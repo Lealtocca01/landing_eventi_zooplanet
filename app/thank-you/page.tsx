@@ -11,7 +11,8 @@ function ThankYouContent() {
   const code = searchParams.get('code');
   const [copied, setCopied] = useState(false);
   const [referralCount, setReferralCount] = useState(0);
-  const referralLink = typeof window !== 'undefined' ? `${window.location.origin}/?ref=${code}` : '';
+  const referralLink =
+    typeof window !== 'undefined' ? `${window.location.origin}/?code=${code}` : '';
 
   useEffect(() => {
     if (!code) return;

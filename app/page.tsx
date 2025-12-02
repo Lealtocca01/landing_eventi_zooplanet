@@ -14,10 +14,14 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { getSupabase } from '@/lib/supabase';
 import { Heart, Calendar, Camera, Gift, Users, Sparkles } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function Home() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const referredByFromUrl =
+    searchParams.get('code') || searchParams.get('ref') || '';
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -26,7 +30,7 @@ export default function Home() {
     phone: '',
     timeSlot: '',
     privacyAccepted: false,
-    referredBy: '',
+    referredBy: referredByFromUrl,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -92,12 +96,16 @@ export default function Home() {
       }
 
       // Referral count update
-      if (data && formData.referredBy) {
-        const { error: rpcError } = await supabase.rpc('increment_referral_count', {
-          ref_code: formData.referredBy,
-        });
+      const referredBy = formData.referredBy?.trim();
+      if (data && referredBy) {
+        const { error: rpcError } = await supabase.rpc(
+          'increment_referral_count',
+          {
+            ref_code: referredBy,
+          }
+        );
         if (rpcError) {
-          console.error("RPC Error:", rpcError);
+          console.error('RPC Error:', rpcError);
         }
       }
 
