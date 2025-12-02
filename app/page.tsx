@@ -58,22 +58,28 @@ export default function Home() {
         return;
       }
 
+      // Cleaned payload
+      const clean = {
+        first_name: formData.firstName?.trim() || null,
+        last_name: formData.lastName?.trim() || null,
+        city: formData.city?.trim() || null,
+        email: formData.email?.trim() || null,
+        phone: formData.phone?.trim() || null,
+        time_slot: formData.timeSlot || null,
+        referred_by: formData.referredBy?.trim() || null,
+        privacy_accepted: !!formData.privacyAccepted,
+      };
+
+      console.log("Payload to Supabase:", clean);
+
+      // INSERT
       const { data, error: insertError } = await supabase
         .from('registrations')
-        .insert([
-          {
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            city: formData.city,
-            email: formData.email,
-            phone: formData.phone,
-            time_slot: formData.timeSlot,
-            referred_by: formData.referredBy || null,
-            privacy_accepted: formData.privacyAccepted,
-          },
-        ])
+        .insert([clean])
         .select()
         .maybeSingle();
+
+      console.log("Insert result:", { data, insertError });
 
       if (insertError) {
         if (insertError.code === '23505') {
@@ -85,12 +91,17 @@ export default function Home() {
         return;
       }
 
+      // Referral count update
       if (data && formData.referredBy) {
-        await supabase.rpc('increment_referral_count', {
+        const { error: rpcError } = await supabase.rpc('increment_referral_count', {
           ref_code: formData.referredBy,
         });
+        if (rpcError) {
+          console.error("RPC Error:", rpcError);
+        }
       }
 
+      // Redirect
       if (data) {
         router.push(`/thank-you?code=${data.referral_code}`);
       }

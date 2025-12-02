@@ -1,0 +1,13 @@
+Tech Stack: Next.js 13/14 (App Router), TypeScript, TailwindCSS, Shadcn.
+
+Goal: Trasformare la landing in una pagina mobile-first, emozionale, giocosa e natalizia per Zooplanet.
+
+Style: Leggero, caldo, animazioni soft (Framer Motion), immagini grandi, CTA chiare.
+
+Constraints: mantenere palette, font e mood di Zooplanet.
+
+Cursor Instructions:
+  - mantenere struttura pulita dei componenti.
+  - proporre migliorie su UI/UX quando modifichiamo.
+  - evitare codice troppo complesso o boilerplate.
+  - suggerire componenti riutilizzabili e naming chiaro.
