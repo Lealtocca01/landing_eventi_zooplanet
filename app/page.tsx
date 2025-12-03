@@ -156,11 +156,11 @@ export default function Home() {
       <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-6 md:px-8 lg:px-12 py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNFRTc2MjMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAgNC40MTgtMy41ODIgOC04IDhzLTgtMy41ODItOC04IDMuNTgyLTggOC04IDggMy41ODIgOCA4eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-10 w-full px-6 sm:px-4 md:px-0">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-black text-gray-900 leading-[1.1] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] break-words">
+        <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-10 w-full px-3 sm:px-4 md:px-0">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
             Un Natale
             <br />
-            <span className="text-red-600 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] font-black [-webkit-text-stroke:0.5px_rgba(0,0,0,0.1)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Indimenticabile</span>
+            <span className="text-red-600 drop-shadow-[0_6px_12px_rgba(238,118,35,0.5)] font-black [-webkit-text-stroke:2px_rgba(0,0,0,0.2)] text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem]">Indimenticabile</span>
           </h1>
 
           <div className="space-y-3 text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
