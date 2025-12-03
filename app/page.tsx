@@ -152,19 +152,21 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-green-50">
-      <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-4 py-20 md:py-32">
+    <main className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-green-50 overflow-x-hidden">
+      <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-6 md:px-8 lg:px-12 py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNFRTc2MjMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAgNC40MTgtMy41ODIgOC04IDhzLTgtMy41ODItOC04IDMuNTgyLTggOC04IDggMy41ODIgOCA4eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-10">
-          <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-black text-gray-900 leading-[1.1] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            Natale con i{' '}
-            <span className="text-red-600 drop-shadow-lg">Cuccioli</span>
+        <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-10 w-full px-4 md:px-0">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black text-gray-900 leading-[1.1] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            Un Natale
+            <br />
+            <span className="text-red-600 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] font-black [-webkit-text-stroke:0.5px_rgba(0,0,0,0.1)]">Indimenticabile</span>
           </h1>
 
-          <p className="text-2xl md:text-3xl lg:text-4xl text-gray-700 max-w-3xl mx-auto md:mx-auto font-medium">
-            L'evento più dolce dell'anno a Zooplanet Pantigliate
-          </p>
+          <div className="space-y-3 text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto font-medium">
+            <p>Con la tua famiglia. Con i tuoi bambini. Con i cuccioli.</p>
+            <p className="text-[#EE7623] font-semibold">Un ricordo dolce che conserverai per sempre.</p>
+          </div>
 
           <div className="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-2xl my-8 transition-transform hover:scale-105 duration-300">
             <div className="aspect-[3/4] md:aspect-[2/3] lg:aspect-[3/4] relative">
@@ -196,7 +198,7 @@ export default function Home() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            6 motivi per partecipare
+            6 motivi per cui non puoi mancare
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -213,10 +215,10 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Esperienza unica</h3>
+                    <h3 className="text-2xl font-black">Un ricordo fantastico per sempre</h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
-                    Un evento magico a tema cuccioli che non dimenticherai
+                    Una foto speciale, un momento unico con la tua famiglia.
                   </p>
                 </div>
               </div>
@@ -235,10 +237,10 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Heart className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Perfetto per famiglie</h3>
+                    <h3 className="text-2xl font-black">I tuoi bambini lo ameranno</h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
-                    Bambini e adulti si divertiranno insieme ai cuccioli
+                    Un'esperienza tenera e divertente.
                   </p>
                 </div>
               </div>
@@ -257,10 +259,10 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Camera className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Foto natalizia</h3>
+                    <h3 className="text-2xl font-black">Vivrai l'atmosfera unica del Natale</h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
-                    Il ricordo perfetto delle tue feste con i cuccioli
+                    Luci, dolci, profumi, emozioni vere.
                   </p>
                 </div>
               </div>
@@ -279,10 +281,10 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Gift className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Dolci natalizi offerti</h3>
+                    <h3 className="text-2xl font-black">Gusterai tante delizie natalizie</h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
-                    Prelibatezze per rendere l'esperienza ancora più dolce
+                    Il Natale in ogni dettaglio.
                   </p>
                 </div>
               </div>
@@ -301,10 +303,10 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Users className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Posti limitati</h3>
+                    <h3 className="text-2xl font-black">Posti limitati: non perdertelo</h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
-                    La registrazione è necessaria per garantire un'esperienza di qualità
+                    È un evento unico nel suo genere.
                   </p>
                 </div>
               </div>
@@ -323,10 +325,10 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Evento gratuito</h3>
+                    <h3 className="text-2xl font-black">È gratuito</h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
-                    L'accesso è completamente gratuito, basta registrarsi
+                    E puoi anche ottenere la foto gratis invitando 3 amici.
                   </p>
                 </div>
               </div>
@@ -339,7 +341,7 @@ export default function Home() {
               size="lg"
               className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Riserva gratuitamente il tuo accesso
+              Riserva il tuo posto
             </Button>
           </div>
         </div>
@@ -348,7 +350,7 @@ export default function Home() {
       <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            Come funziona
+            Come funziona l'evento
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -356,9 +358,9 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
                 <Calendar className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">1. Registrati</h3>
+              <h3 className="text-2xl font-black text-gray-900">1. Registrati gratuitamente</h3>
               <p className="text-lg text-gray-600">
-                Scegli gratuitamente la tua fascia oraria preferita
+                Riserva il tuo posto e scegli la fascia oraria.
               </p>
             </div>
 
@@ -366,19 +368,19 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#6ABF4B] rounded-full flex items-center justify-center">
                 <Gift className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">2. Vieni da noi</h3>
+              <h3 className="text-2xl font-black text-gray-900">2. Vivi l'atmosfera più dolce del Natale</h3>
               <p className="text-lg text-gray-600">
-                Via dei Rioni 13, Pantigliate. Ti aspettano dolci natalizi!
+                Cuccioli, pandoro, panettone, cioccolata calda.
               </p>
             </div>
 
-            <div className="text-left md:text-center space-y-4 p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-white hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="text-center space-y-4 p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-white hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
                 <Camera className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">3. Scatta la foto</h3>
+              <h3 className="text-2xl font-black text-gray-900">3. Scatta la tua foto natalizia</h3>
               <p className="text-lg text-gray-600">
-                Ricordo di Natale con i cuccioli (pacchetto completo acquistabile)
+                Un ricordo che scalda davvero il cuore.
               </p>
             </div>
           </div>
@@ -390,7 +392,7 @@ export default function Home() {
               variant="outline"
               className="w-full max-w-md mx-auto border-2 border-[#6ABF4B] text-[#6ABF4B] hover:bg-[#6ABF4B] hover:text-white text-lg py-6 rounded-full transition-all duration-300 hover:scale-105"
             >
-              Prenota ora il tuo posto
+              Prenota ora
             </Button>
           </div>
         </div>
