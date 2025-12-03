@@ -15,6 +15,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { getSupabase } from '@/lib/supabase';
 import { Heart, Calendar, Camera, Gift, Users, Sparkles } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Home() {
   const router = useRouter();
@@ -152,36 +153,35 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-green-50">
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-16 md:py-24">
+      <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-4 py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNFRTc2MjMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAgNC40MTgtMy41ODIgOC04IDhzLTgtMy41ODItOC04IDMuNTgyLTggOC04IDggMy41ODIgOCA4eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-block animate-bounce">
-            <Sparkles className="w-12 h-12 text-[#EE7623] mx-auto mb-4" />
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
-            Natale con i Cuccioli{' '}
-            <span className="inline-block">🎄🐶</span>
+        <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-10">
+          <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-black text-gray-900 leading-[1.1] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            Natale con i{' '}
+            <span className="text-red-600 drop-shadow-lg">Cuccioli</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-2xl md:text-3xl lg:text-4xl text-gray-700 max-w-3xl mx-auto md:mx-auto font-medium">
             L'evento più dolce dell'anno a Zooplanet Pantigliate
           </p>
 
           <div className="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-2xl my-8 transition-transform hover:scale-105 duration-300">
-            <div className="aspect-[4/3] bg-gradient-to-br from-[#EE7623] to-[#6ABF4B] flex items-center justify-center">
-              <div className="text-white text-center p-8">
-                <Heart className="w-24 h-24 mx-auto mb-4 opacity-50" />
-                <p className="text-lg font-semibold">Immagine evento</p>
-              </div>
+            <div className="aspect-[3/4] md:aspect-[2/3] lg:aspect-[3/4] relative">
+              <Image
+                src="/57431da6-bdd7-4d64-b31a-817e1d00b090.JPG"
+                alt="Natale con i Cuccioli - Zooplanet Pantigliate"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
 
           <Button
             onClick={scrollToForm}
             size="lg"
-            className="bg-[#EE7623] hover:bg-[#d66a1f] text-white text-lg px-12 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="w-full max-w-md mx-auto bg-[#EE7623] hover:bg-[#d66a1f] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             Riserva il tuo accesso gratuito
           </Button>
@@ -190,7 +190,7 @@ export default function Home() {
 
       <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
             Come funziona
           </h2>
 
@@ -199,7 +199,7 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
                 <Calendar className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">1. Registrati</h3>
+              <h3 className="text-2xl font-black text-gray-900">1. Registrati</h3>
               <p className="text-lg text-gray-600">
                 Scegli gratuitamente la tua fascia oraria preferita
               </p>
@@ -209,17 +209,17 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#6ABF4B] rounded-full flex items-center justify-center">
                 <Gift className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">2. Vieni da noi</h3>
+              <h3 className="text-2xl font-black text-gray-900">2. Vieni da noi</h3>
               <p className="text-lg text-gray-600">
                 Via dei Rioni 13, Pantigliate. Ti aspettano dolci natalizi!
               </p>
             </div>
 
-            <div className="text-center space-y-4 p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-white hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="text-left md:text-center space-y-4 p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-white hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
                 <Camera className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">3. Scatta la foto</h3>
+              <h3 className="text-2xl font-black text-gray-900">3. Scatta la foto</h3>
               <p className="text-lg text-gray-600">
                 Ricordo di Natale con i cuccioli (pacchetto completo acquistabile)
               </p>
@@ -231,7 +231,7 @@ export default function Home() {
               onClick={scrollToForm}
               size="lg"
               variant="outline"
-              className="border-2 border-[#6ABF4B] text-[#6ABF4B] hover:bg-[#6ABF4B] hover:text-white text-lg px-10 py-6 rounded-full transition-all duration-300 hover:scale-105"
+              className="w-full max-w-md mx-auto border-2 border-[#6ABF4B] text-[#6ABF4B] hover:bg-[#6ABF4B] hover:text-white text-lg py-6 rounded-full transition-all duration-300 hover:scale-105"
             >
               Prenota ora il tuo posto
             </Button>
@@ -241,7 +241,7 @@ export default function Home() {
 
       <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-orange-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
             6 motivi per partecipare
           </h2>
 
@@ -249,7 +249,7 @@ export default function Home() {
             <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
               <Sparkles className="w-8 h-8 text-[#EE7623] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-black text-gray-900 mb-2">
                   Esperienza unica
                 </h3>
                 <p className="text-gray-600">
@@ -261,7 +261,7 @@ export default function Home() {
             <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
               <Heart className="w-8 h-8 text-[#6ABF4B] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-black text-gray-900 mb-2">
                   Perfetto per famiglie
                 </h3>
                 <p className="text-gray-600">
@@ -273,7 +273,7 @@ export default function Home() {
             <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
               <Camera className="w-8 h-8 text-[#EE7623] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-black text-gray-900 mb-2">
                   Foto natalizia
                 </h3>
                 <p className="text-gray-600">
@@ -285,7 +285,7 @@ export default function Home() {
             <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
               <Gift className="w-8 h-8 text-[#6ABF4B] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-black text-gray-900 mb-2">
                   Dolci natalizi offerti
                 </h3>
                 <p className="text-gray-600">
@@ -297,7 +297,7 @@ export default function Home() {
             <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
               <Users className="w-8 h-8 text-[#EE7623] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-black text-gray-900 mb-2">
                   Posti limitati
                 </h3>
                 <p className="text-gray-600">
@@ -309,7 +309,7 @@ export default function Home() {
             <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
               <Sparkles className="w-8 h-8 text-[#6ABF4B] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-black text-gray-900 mb-2">
                   Evento gratuito
                 </h3>
                 <p className="text-gray-600">
@@ -323,7 +323,7 @@ export default function Home() {
             <Button
               onClick={scrollToForm}
               size="lg"
-              className="bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg px-12 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
               Riserva gratuitamente il tuo accesso
             </Button>
@@ -334,8 +334,8 @@ export default function Home() {
       <section id="registration-form" className="py-16 md:py-24 px-4 bg-gradient-to-b from-orange-50 to-green-50">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-left md:text-center mb-8">
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
                 Registrati ora
               </h2>
               <p className="text-lg text-gray-600">
@@ -502,7 +502,7 @@ export default function Home() {
                 type="submit"
                 disabled={loading}
                 size="lg"
-                className="w-full bg-[#EE7623] hover:bg-[#d66a1f] text-white text-xl py-7 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
+                className="w-full bg-[#EE7623] hover:bg-[#d66a1f] text-white text-xl py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
               >
                 {loading ? 'Registrazione in corso...' : 'Conferma la registrazione'}
               </Button>
@@ -512,7 +512,7 @@ export default function Home() {
       </section>
 
       <footer className="py-12 px-4 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
+        <div className="max-w-4xl mx-auto text-left md:text-center space-y-4">
           <p className="text-lg">
             Zooplanet Pantigliate • Via dei Rioni 13, Pantigliate (MI)
           </p>
