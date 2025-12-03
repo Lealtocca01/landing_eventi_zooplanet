@@ -188,6 +188,163 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden">
+        {/* Accenti natalizi discreti */}
+        <div className="absolute top-10 left-10 text-[#EE7623] opacity-20 text-4xl animate-pulse">❄️</div>
+        <div className="absolute top-20 right-20 text-[#6ABF4B] opacity-20 text-3xl animate-pulse delay-300">✨</div>
+        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🎄</div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            6 motivi per partecipare
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Esperienza unica - con immagine */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/whatsapp-preview-final.jpg"
+                  alt="Esperienza unica con cuccioli natalizi"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sparkles className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Esperienza unica</h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base">
+                    Un evento magico a tema cuccioli che non dimenticherai
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Perfetto per famiglie - con immagine */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/Gemini_Generated_Image_tpo4mtpo4mtpo4mt.png"
+                  alt="Perfetto per famiglie"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Heart className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Perfetto per famiglie</h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base">
+                    Bambini e adulti si divertiranno insieme ai cuccioli
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Foto natalizia - con immagine */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/Festive Pups with Holiday Treats.png"
+                  alt="Foto natalizia con cuccioli"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Camera className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Foto natalizia</h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base">
+                    Il ricordo perfetto delle tue feste con i cuccioli
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Dolci natalizi offerti - con immagine */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/Gemini_Generated_Image_v2cdblv2cdblv2cd.png"
+                  alt="Dolci natalizi offerti"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Gift className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Dolci natalizi offerti</h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base">
+                    Prelibatezze per rendere l'esperienza ancora più dolce
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 5: Posti limitati - con immagine */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/Gemini_Generated_Image_v4hhqzv4hhqzv4hh.png"
+                  alt="Posti limitati"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Users className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Posti limitati</h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base">
+                    La registrazione è necessaria per garantire un'esperienza di qualità
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 6: Evento gratuito - con immagine */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/Gemini_Generated_Image_up021hup021hup02.png"
+                  alt="Evento gratuito natalizio"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sparkles className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Evento gratuito</h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base">
+                    L'accesso è completamente gratuito, basta registrarsi
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              onClick={scrollToForm}
+              size="lg"
+              className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              Riserva gratuitamente il tuo accesso
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
@@ -234,98 +391,6 @@ export default function Home() {
               className="w-full max-w-md mx-auto border-2 border-[#6ABF4B] text-[#6ABF4B] hover:bg-[#6ABF4B] hover:text-white text-lg py-6 rounded-full transition-all duration-300 hover:scale-105"
             >
               Prenota ora il tuo posto
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-orange-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            6 motivi per partecipare
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-              <Sparkles className="w-8 h-8 text-[#EE7623] flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">
-                  Esperienza unica
-                </h3>
-                <p className="text-gray-600">
-                  Un evento magico a tema cuccioli che non dimenticherai
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-              <Heart className="w-8 h-8 text-[#6ABF4B] flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">
-                  Perfetto per famiglie
-                </h3>
-                <p className="text-gray-600">
-                  Bambini e adulti si divertiranno insieme ai cuccioli
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-              <Camera className="w-8 h-8 text-[#EE7623] flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">
-                  Foto natalizia
-                </h3>
-                <p className="text-gray-600">
-                  Il ricordo perfetto delle tue feste con i cuccioli
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-              <Gift className="w-8 h-8 text-[#6ABF4B] flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">
-                  Dolci natalizi offerti
-                </h3>
-                <p className="text-gray-600">
-                  Prelibatezze per rendere l'esperienza ancora più dolce
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-              <Users className="w-8 h-8 text-[#EE7623] flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">
-                  Posti limitati
-                </h3>
-                <p className="text-gray-600">
-                  La registrazione è necessaria per garantire un'esperienza di qualità
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300">
-              <Sparkles className="w-8 h-8 text-[#6ABF4B] flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-2">
-                  Evento gratuito
-                </h3>
-                <p className="text-gray-600">
-                  L'accesso è completamente gratuito, basta registrarsi
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              onClick={scrollToForm}
-              size="lg"
-              className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-            >
-              Riserva gratuitamente il tuo accesso
             </Button>
           </div>
         </div>
