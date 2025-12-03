@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg',
+        url: 'https://landing-eventi-zooplanet.vercel.app/Progetto%20senza%20titolo.png',
         width: 1200,
         height: 630,
         alt: 'Natale con i Cuccioli Zooplanet',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Natale con i Cuccioli - Zooplanet Pantigliate',
     description:
       "L'evento più dolce dell'anno a Zooplanet Pantigliate. Registrati gratuitamente per riservare il tuo posto!",
-    images: ['https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg'],
+    images: ['https://landing-eventi-zooplanet.vercel.app/Progetto%20senza%20titolo.png'],
   },
 };
 

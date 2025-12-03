@@ -210,7 +210,7 @@ export default function Home() {
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
-                  src="/whatsapp-preview-final.jpg"
+                  src="/Progetto senza titolo.png"
                   alt="Esperienza unica con cuccioli natalizi"
                   fill
                   className="object-cover"
