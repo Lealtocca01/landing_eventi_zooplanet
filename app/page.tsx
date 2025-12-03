@@ -163,9 +163,13 @@ export default function Home() {
             <span className="text-red-600 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] font-black [-webkit-text-stroke:0.5px_rgba(0,0,0,0.1)]">Indimenticabile</span>
           </h1>
 
-          <div className="space-y-3 text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto font-medium">
-            <p>Con la tua famiglia. Con i tuoi bambini. Con i cuccioli.</p>
-            <p className="text-[#EE7623] font-semibold">Un ricordo dolce che conserverai per sempre.</p>
+          <div className="space-y-3 text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
+            <p className="font-light">
+              Con la tua <span className="font-black text-gray-900">famiglia</span>. Con i tuoi <span className="font-black text-gray-900">bambini</span>. Con i <span className="font-black text-gray-900">cuccioli</span>.
+            </p>
+            <p className="text-[#EE7623] font-bold text-2xl md:text-3xl lg:text-4xl">
+              Un <span className="font-black italic">ricordo</span> dolce che conserverai <span className="font-black">per sempre</span>.
+            </p>
           </div>
 
           <div className="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-2xl my-8 transition-transform hover:scale-105 duration-300">
@@ -198,7 +202,7 @@ export default function Home() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            6 motivi per cui non puoi mancare
+            <span className="text-[#EE7623]">6 motivi</span> per cui <span className="italic">non puoi mancare</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -215,10 +219,12 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Un ricordo fantastico per sempre</h3>
+                    <h3 className="text-2xl font-black">
+                      Un <span className="text-yellow-300">ricordo</span> fantastico <span className="italic">per sempre</span>
+                    </h3>
                   </div>
-                  <p className="text-white/95 text-sm md:text-base">
-                    Una foto speciale, un momento unico con la tua famiglia.
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    Una <span className="font-bold">foto speciale</span>, un <span className="italic">momento unico</span> con la tua <span className="font-bold">famiglia</span>.
                   </p>
                 </div>
               </div>
@@ -237,10 +243,12 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Heart className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">I tuoi bambini lo ameranno</h3>
+                    <h3 className="text-2xl font-black">
+                      I tuoi <span className="text-yellow-300">bambini</span> lo ameranno
+                    </h3>
                   </div>
-                  <p className="text-white/95 text-sm md:text-base">
-                    Un'esperienza tenera e divertente.
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    Un'<span className="font-bold">esperienza</span> <span className="italic">tenera</span> e <span className="font-bold">divertente</span>.
                   </p>
                 </div>
               </div>
@@ -259,7 +267,9 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Camera className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Vivrai l'atmosfera unica del Natale</h3>
+                    <h3 className="text-2xl font-black">
+                      Vivrai l'<span className="text-yellow-300 italic">atmosfera</span> unica del <span className="text-yellow-300">Natale</span>
+                    </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base">
                     Luci, dolci, profumi, emozioni vere.
@@ -283,8 +293,8 @@ export default function Home() {
                     <Gift className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">Gusterai tante delizie natalizie</h3>
                   </div>
-                  <p className="text-white/95 text-sm md:text-base">
-                    Il Natale in ogni dettaglio.
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    Il <span className="font-bold">Natale</span> in ogni <span className="italic">dettaglio</span>.
                   </p>
                 </div>
               </div>
@@ -303,10 +313,12 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Users className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Posti limitati: non perdertelo</h3>
+                    <h3 className="text-2xl font-black">
+                      <span className="text-yellow-300">Posti limitati</span>: non perdertelo
+                    </h3>
                   </div>
-                  <p className="text-white/95 text-sm md:text-base">
-                    È un evento unico nel suo genere.
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    È un <span className="font-bold">evento unico</span> nel suo <span className="italic">genere</span>.
                   </p>
                 </div>
               </div>
@@ -325,10 +337,12 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">È gratuito</h3>
+                    <h3 className="text-2xl font-black">
+                      È <span className="text-yellow-300 text-3xl">gratuito</span>
+                    </h3>
                   </div>
-                  <p className="text-white/95 text-sm md:text-base">
-                    E puoi anche ottenere la foto gratis invitando 3 amici.
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    E puoi anche ottenere la <span className="font-black text-lg">foto gratis</span> invitando <span className="font-bold">3 amici</span>.
                   </p>
                 </div>
               </div>
@@ -358,9 +372,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
                 <Calendar className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">1. Registrati gratuitamente</h3>
-              <p className="text-lg text-gray-600">
-                Riserva il tuo posto e scegli la fascia oraria.
+              <h3 className="text-2xl font-black text-gray-900">
+                1. Registrati <span className="text-[#EE7623]">gratuitamente</span>
+              </h3>
+              <p className="text-lg text-gray-600 font-light">
+                Riserva il tuo <span className="font-semibold">posto</span> e scegli la <span className="italic">fascia oraria</span>.
               </p>
             </div>
 
@@ -368,9 +384,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#6ABF4B] rounded-full flex items-center justify-center">
                 <Gift className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">2. Vivi l'atmosfera più dolce del Natale</h3>
-              <p className="text-lg text-gray-600">
-                Cuccioli, pandoro, panettone, cioccolata calda.
+              <h3 className="text-2xl font-black text-gray-900">
+                2. Vivi l'<span className="text-[#EE7623] italic">atmosfera</span> più dolce del Natale
+              </h3>
+              <p className="text-lg text-gray-600 font-light">
+                <span className="font-bold">Cuccioli</span>, <span className="font-semibold">pandoro</span>, <span className="font-semibold">panettone</span>, <span className="italic">cioccolata calda</span>.
               </p>
             </div>
 
@@ -378,9 +396,11 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
                 <Camera className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">3. Scatta la tua foto natalizia</h3>
-              <p className="text-lg text-gray-600">
-                Un ricordo che scalda davvero il cuore.
+              <h3 className="text-2xl font-black text-gray-900">
+                3. Scatta la tua <span className="text-[#EE7623]">foto natalizia</span>
+              </h3>
+              <p className="text-lg text-gray-600 font-light">
+                Un <span className="font-bold">ricordo</span> che <span className="italic font-semibold">scalda davvero il cuore</span>.
               </p>
             </div>
           </div>
