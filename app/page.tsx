@@ -160,7 +160,7 @@ export default function Home() {
           <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
             Un Natale
             <br />
-            <span className="text-red-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem]">Indimenticabile</span>
+            <span className="text-red-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">Indimenticabile</span>
           </h1>
 
           <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
@@ -210,7 +210,7 @@ export default function Home() {
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
-                  src="/Progetto senza titolo.png"
+                  src="/whatsapp-preview-final.png"
                   alt="Esperienza unica con cuccioli natalizi"
                   fill
                   className="object-cover"
