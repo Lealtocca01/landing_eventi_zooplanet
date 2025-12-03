@@ -153,19 +153,19 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-green-50 overflow-x-hidden">
-      <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-6 md:px-8 lg:px-12 py-20 md:py-32">
+      <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-6 md:px-10 lg:px-12 py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNFRTc2MjMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAgNC40MTgtMy41ODIgOC04IDhzLTgtMy41ODItOC04IDMuNTgyLTggOC04IDggMy41ODIgOCA4eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-10 w-full px-3 sm:px-4 md:px-0">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
+          <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
             Un Natale
             <br />
             <span className="text-red-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem]">Indimenticabile</span>
           </h1>
 
-          <div className="space-y-3 text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
+          <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
             <p className="font-light">
-              Con la tua <span className="font-black text-gray-900">famiglia</span>. Con i tuoi <span className="font-black text-gray-900">bambini</span>. Con i <span className="font-black text-gray-900">cuccioli</span>.
+              Con la tua <span className="font-black text-gray-900">famiglia</span>, i tuoi <span className="font-black text-gray-900">bambini</span> e tanti <span className="font-black text-gray-900">cuccioli</span>.
             </p>
             <p className="text-[#EE7623] font-bold text-2xl md:text-3xl lg:text-4xl">
               Un <span className="font-black italic">ricordo</span> dolce che conserverai <span className="font-black">per sempre</span>.
@@ -615,7 +615,7 @@ export default function Home() {
           size="lg"
           className="w-full bg-[#EE7623] hover:bg-[#d66a1f] text-white text-lg py-6 rounded-full shadow-xl"
         >
-          Riserva ora
+          Non perdertelo
         </Button>
       </div>
     </main>
