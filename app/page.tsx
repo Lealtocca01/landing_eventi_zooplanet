@@ -160,7 +160,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
             Un Natale
             <br />
-            <span className="text-red-600 drop-shadow-[0_6px_12px_rgba(238,118,35,0.5)] font-black [-webkit-text-stroke:2px_rgba(0,0,0,0.2)] text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem]">Indimenticabile</span>
+            <span className="text-red-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[11rem] 2xl:text-[12rem]">Indimenticabile</span>
           </h1>
 
           <div className="space-y-3 text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
