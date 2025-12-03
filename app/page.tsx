@@ -22,6 +22,8 @@ export default function Home() {
   const referredByFromUrl =
     searchParams.get('code') || searchParams.get('ref') || '';
 
+  const [participants, setParticipants] = useState<number>(1);
+  const [timeSlot, setTimeSlot] = useState<string>("15:00 - 16:00");
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -69,7 +71,8 @@ export default function Home() {
         city: formData.city?.trim() || null,
         email: formData.email?.trim() || null,
         phone: formData.phone?.trim() || null,
-        time_slot: formData.timeSlot || null,
+        participants: participants,
+        time_slot: timeSlot,
         referred_by: formData.referredBy?.trim() || null,
         privacy_accepted: !!formData.privacyAccepted,
       };
@@ -106,6 +109,34 @@ export default function Home() {
         );
         if (rpcError) {
           console.error('RPC Error:', rpcError);
+        }
+      }
+
+      // Webhook notification
+      if (data) {
+        try {
+          await fetch(
+            'https://twipagency.app.n8n.cloud/webhook/zooplanet/registration-confirmation',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Webhook-Token': 'zooplanet_2025_secret_abc123',
+              },
+              body: JSON.stringify({
+                registration_id: data.id,
+                email: data.email,
+                referral_code: data.referral_code,
+                first_name: formData.firstName,
+                last_name: formData.lastName,
+                phone: formData.phone,
+                participants,
+                time_slot: timeSlot,
+              }),
+            }
+          );
+        } catch (webhookError) {
+          console.error('Webhook Error:', webhookError);
         }
       }
 
@@ -398,29 +429,47 @@ export default function Home() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="timeSlot" className="text-lg">
-                  Fascia oraria preferita *
+                <Label htmlFor="participants" className="text-lg">
+                  Numero partecipanti *
                 </Label>
-                <Select
-                  value={formData.timeSlot}
-                  onValueChange={(value) =>
-                    setFormData({ ...formData, timeSlot: value })
-                  }
+                <select
+                  id="participants"
+                  value={participants}
+                  onChange={(e) => setParticipants(parseInt(e.target.value))}
                   required
+                  className="w-full text-lg py-6 px-4 border-2 border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#EE7623] focus:border-transparent"
                 >
-                  <SelectTrigger className="text-lg py-6 rounded-xl">
-                    <SelectValue placeholder="Seleziona la fascia oraria" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="10:00-11:00">10:00 - 11:00</SelectItem>
-                    <SelectItem value="11:00-12:00">11:00 - 12:00</SelectItem>
-                    <SelectItem value="12:00-13:00">12:00 - 13:00</SelectItem>
-                    <SelectItem value="14:00-15:00">14:00 - 15:00</SelectItem>
-                    <SelectItem value="15:00-16:00">15:00 - 16:00</SelectItem>
-                    <SelectItem value="16:00-17:00">16:00 - 17:00</SelectItem>
-                    <SelectItem value="17:00-18:00">17:00 - 18:00</SelectItem>
-                  </SelectContent>
-                </Select>
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                    <option key={n} value={n}>
+                      {n}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="timeSlot" className="text-lg">
+                  Fascia oraria *
+                </Label>
+                <select
+                  id="timeSlot"
+                  value={timeSlot}
+                  onChange={(e) => setTimeSlot(e.target.value)}
+                  required
+                  className="w-full text-lg py-6 px-4 border-2 border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#EE7623] focus:border-transparent"
+                >
+                  {[
+                    "15:00 - 16:00",
+                    "16:00 - 17:00",
+                    "17:00 - 18:00",
+                    "18:00 - 19:00",
+                    "19:00 - 20:00",
+                  ].map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="flex items-start space-x-3 p-4 rounded-xl bg-gray-50">
