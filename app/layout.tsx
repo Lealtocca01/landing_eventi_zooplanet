@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/whatsapp-preview.jpg',
+        url: '/whatsapp-preview.png',
         width: 768,
         height: 768,
         alt: 'Famiglia e cuccioli in un set natalizio da Zooplanet',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Natale con i Cuccioli - Zooplanet Pantigliate',
     description:
       "L'evento più dolce dell'anno a Zooplanet Pantigliate. Registrati gratuitamente per riservare il tuo posto!",
-    images: ['/whatsapp-preview.jpg'],
+    images: ['/whatsapp-preview.png'],
   },
 };
 
