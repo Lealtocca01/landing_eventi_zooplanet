@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://landing-eventi-zooplanet.vercel.app/whatsapp-preview.png',
-        width: 768,
-        height: 768,
-        alt: 'Famiglia e cuccioli in un set natalizio da Zooplanet',
+        width: 1200,
+        height: 630,
+        alt: 'Natale con i Cuccioli Zooplanet',
       },
     ],
   },
