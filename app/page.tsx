@@ -163,6 +163,10 @@ export default function Home() {
             <span className="text-red-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">Indimenticabile</span>
           </h1>
 
+          <p className="text-sm md:text-base text-gray-600 font-medium text-left md:text-center">
+            Domenica 14 Dicembre
+          </p>
+
           <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
             <p className="font-light">
               Con la tua <span className="font-black text-gray-900">famiglia</span>, i tuoi <span className="font-black text-gray-900">bambini</span> e tanti <span className="font-black text-gray-900">cuccioli</span>.
