@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { getSupabase } from '@/lib/supabase';
-import { Heart, Calendar, Camera, Gift, Users, Sparkles } from 'lucide-react';
+import { Heart, Calendar, Camera, Gift, Users, Sparkles, PartyPopper, Percent, Tag } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 
@@ -159,22 +159,22 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-6 w-full px-3 sm:px-4 md:px-0">
           <div className="space-y-2">
             <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
-              Un Natale
+              Zooplanet compie
               <br />
-              <span className="text-red-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">Indimenticabile</span>
+              <span className="text-[#EE7623] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">5 Anni!</span>
             </h1>
 
             <p className="text-sm md:text-base text-gray-600 font-medium text-left md:text-center -mt-1">
-              Domenica 14 Dicembre
+              Zooplanet Lacchiarella
             </p>
           </div>
 
           <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
             <p className="font-light">
-              Con la tua <span className="font-black text-gray-900">famiglia</span>, i tuoi <span className="font-black text-gray-900">bambini</span> e tanti <span className="font-black text-gray-900">cuccioli</span>.
+              Festeggia con noi: <span className="font-black text-gray-900">20% di sconto</span> su tutto, <span className="font-black text-gray-900">gadget in omaggio</span> e <span className="font-black text-gray-900">foto gratuita</span> con il tuo cucciolo.
             </p>
             <p className="text-[#EE7623] font-bold text-2xl md:text-3xl lg:text-4xl">
-              Un <span className="font-black italic">ricordo</span> dolce che conserverai <span className="font-black">per sempre</span>.
+              Porta il tuo <span className="font-black italic">amico a 4 zampe</span> e vieni a <span className="font-black">festeggiare</span>!
             </p>
           </div>
 
@@ -182,7 +182,7 @@ export default function Home() {
             <div className="aspect-[3/4] md:aspect-[2/3] lg:aspect-[3/4] relative">
               <Image
                 src="/57431da6-bdd7-4d64-b31a-817e1d00b090.JPG"
-                alt="Natale con i Cuccioli - Zooplanet Pantigliate"
+                alt="5 Anni di Zooplanet - Lacchiarella"
                 fill
                 className="object-cover"
                 priority
@@ -195,77 +195,77 @@ export default function Home() {
             size="lg"
             className="w-full max-w-md mx-auto bg-[#EE7623] hover:bg-[#d66a1f] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
-            Riserva il tuo accesso gratuito
+            Partecipa alla festa
           </Button>
         </div>
       </section>
 
       <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden">
-        {/* Accenti natalizi discreti */}
-        <div className="absolute top-10 left-10 text-[#EE7623] opacity-20 text-4xl animate-pulse">❄️</div>
+        {/* Accenti festosi */}
+        <div className="absolute top-10 left-10 text-[#EE7623] opacity-20 text-4xl animate-pulse">🎉</div>
         <div className="absolute top-20 right-20 text-[#6ABF4B] opacity-20 text-3xl animate-pulse delay-300">✨</div>
-        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🎄</div>
+        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🎂</div>
         
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            <span className="text-[#EE7623]">6 motivi</span> per cui <span className="italic">non puoi mancare</span>
+            <span className="text-[#EE7623]">5 motivi</span> per cui <span className="italic">non puoi mancare</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 1: Esperienza unica - con immagine */}
+            {/* Card 1: 20% di sconto su tutto */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/whatsapp-preview-final.jpg"
-                  alt="Esperienza unica con cuccioli natalizi"
+                  alt="20% di sconto su tutto"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <Sparkles className="w-6 h-6 text-white" />
+                    <Percent className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      Un <span className="text-yellow-300">ricordo</span> fantastico <span className="italic">per sempre</span>
+                      <span className="text-yellow-300">20% di sconto</span> su tutto
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Una <span className="font-bold">foto speciale</span>, un <span className="italic">momento unico</span> con la tua <span className="font-bold">famiglia</span>.
+                    Anche sui prodotti <span className="font-bold">già scontati</span>. Un'<span className="italic">occasione unica</span>!
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 2: Perfetto per famiglie - con immagine */}
+            {/* Card 2: Gadget in omaggio */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/Gemini_Generated_Image_tpo4mtpo4mtpo4mt.png"
-                  alt="Perfetto per famiglie"
+                  alt="Gadget in omaggio"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <Heart className="w-6 h-6 text-white" />
+                    <Gift className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      I tuoi <span className="text-yellow-300">bambini</span> lo ameranno
+                      <span className="text-yellow-300">Gadget in omaggio</span> per te
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Un'<span className="font-bold">esperienza</span> <span className="italic">tenera</span> e <span className="font-bold">divertente</span>.
+                    Per ogni <span className="font-bold">acquisto</span> riceverai un <span className="italic">gadget esclusivo</span> in regalo.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 3: Foto natalizia - con immagine */}
+            {/* Card 3: Foto gratuita con il tuo cucciolo */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/Festive Pups with Holiday Treats.png"
-                  alt="Foto natalizia con cuccioli"
+                  alt="Foto gratuita con il tuo cucciolo"
                   fill
                   className="object-cover"
                 />
@@ -274,68 +274,44 @@ export default function Home() {
                   <div className="flex items-center gap-2 mb-2">
                     <Camera className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      Vivrai l'<span className="text-yellow-300 italic">atmosfera</span> unica del <span className="text-yellow-300">Natale</span>
+                      <span className="text-yellow-300">Foto gratuita</span> con il tuo cucciolo
                     </h3>
                   </div>
-                  <p className="text-white/95 text-sm md:text-base">
-                    Luci, dolci, profumi, emozioni vere.
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    Un <span className="font-bold">ricordo speciale</span> con il tuo <span className="italic">amico a 4 zampe</span>.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 4: Dolci natalizi offerti - con immagine */}
+            {/* Card 4: Porta il tuo cucciolo */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/Gemini_Generated_Image_v2cdblv2cdblv2cd.png"
-                  alt="Dolci natalizi offerti"
+                  alt="Porta il tuo cucciolo"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <Gift className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">Gusterai tante delizie natalizie</h3>
+                    <Heart className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">Porta il tuo <span className="text-yellow-300">amico a 4 zampe</span></h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Il <span className="font-bold">Natale</span> in ogni <span className="italic">dettaglio</span>.
+                    I <span className="font-bold">cuccioli</span> sono i <span className="italic">protagonisti</span> della festa!
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 5: Posti limitati - con immagine */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+            {/* Card 5: 5 anni di passione */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group md:col-span-2">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/Gemini_Generated_Image_v4hhqzv4hhqzv4hh.png"
-                  alt="Posti limitati"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Users className="w-6 h-6 text-white" />
-                    <h3 className="text-2xl font-black">
-                      <span className="text-yellow-300">Posti limitati</span>: non perdertelo
-                    </h3>
-                  </div>
-                  <p className="text-white/95 text-sm md:text-base font-light">
-                    È un <span className="font-bold">evento unico</span> nel suo <span className="italic">genere</span>.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 6: Evento gratuito - con immagine */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
-              <div className="relative h-48 md:h-56">
-                <Image
-                  src="/Gemini_Generated_Image_up021hup021hup02.png"
-                  alt="Evento gratuito natalizio"
+                  alt="5 anni di Zooplanet"
                   fill
                   className="object-cover"
                 />
@@ -344,11 +320,11 @@ export default function Home() {
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      È <span className="text-yellow-300 text-3xl">gratuito</span>
+                      <span className="text-yellow-300">5 anni</span> di passione per i tuoi animali
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    E puoi anche ottenere la <span className="font-black text-lg">foto gratis</span> invitando <span className="font-bold">3 amici</span>.
+                    Vieni a <span className="font-bold">festeggiare</span> questo <span className="italic">traguardo</span> insieme a noi!
                   </p>
                 </div>
               </div>
@@ -361,7 +337,7 @@ export default function Home() {
               size="lg"
               className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Riserva il tuo posto
+              Registrati alla festa
             </Button>
           </div>
         </div>
@@ -370,7 +346,7 @@ export default function Home() {
       <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            Come funziona l'evento
+            Come funziona
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -379,10 +355,10 @@ export default function Home() {
                 <Calendar className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">
-                1. Registrati <span className="text-[#EE7623]">gratuitamente</span>
+                1. <span className="text-[#EE7623]">Registrati</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                Riserva il tuo <span className="font-semibold">posto</span> e scegli la <span className="italic">fascia oraria</span>.
+                Compila il modulo e <span className="font-semibold">scegli la fascia oraria</span> che preferisci.
               </p>
             </div>
 
@@ -391,10 +367,10 @@ export default function Home() {
                 <Gift className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">
-                2. Vivi l'<span className="text-[#EE7623] italic">atmosfera</span> più dolce del Natale
+                2. Vieni con il tuo <span className="text-[#EE7623] italic">cucciolo</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                <span className="font-bold">Cuccioli</span>, <span className="font-semibold">pandoro</span>, <span className="font-semibold">panettone</span>, <span className="italic">cioccolata calda</span>.
+                <span className="font-bold">Sconti</span>, <span className="font-semibold">gadget</span> e tante <span className="italic">sorprese</span> ti aspettano.
               </p>
             </div>
 
@@ -403,10 +379,10 @@ export default function Home() {
                 <Camera className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">
-                3. Scatta la tua <span className="text-[#EE7623]">foto natalizia</span>
+                3. Scatta la <span className="text-[#EE7623]">foto ricordo</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                Un <span className="font-bold">ricordo</span> che <span className="italic font-semibold">scalda davvero il cuore</span>.
+                <span className="font-bold">Gratis</span>, insieme al tuo <span className="italic font-semibold">amico a 4 zampe</span>.
               </p>
             </div>
           </div>
@@ -432,7 +408,7 @@ export default function Home() {
                 Registrati ora
               </h2>
               <p className="text-lg text-gray-600">
-                Compila il modulo per riservare il tuo posto gratuito
+                Compila il modulo per partecipare alla festa dei 5 anni
               </p>
             </div>
 
@@ -607,10 +583,10 @@ export default function Home() {
       <footer className="py-12 px-4 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-left md:text-center space-y-4">
           <p className="text-lg">
-            Zooplanet Pantigliate • Via dei Rioni 13, Pantigliate (MI)
+            Zooplanet Lacchiarella
           </p>
           <p className="text-gray-400">
-            Natale con i Cuccioli - Evento gratuito a posti limitati
+            5 Anni di Zooplanet - Festeggia con noi!
           </p>
         </div>
       </footer>

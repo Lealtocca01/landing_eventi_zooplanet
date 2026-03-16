@@ -63,7 +63,7 @@ function ThankYouContent() {
 
   const shareOnWhatsApp = () => {
     const message = encodeURIComponent(
-      `Ciao! Ti invito a Natale con i Cuccioli da Zooplanet Pantigliate. È un evento gratuito fantastico! Registrati qui: ${referralLink}`
+      `Ciao! Ti invito alla festa per i 5 anni di Zooplanet La Chiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. Registrati qui: ${referralLink}`
     );
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
@@ -82,7 +82,7 @@ function ThankYouContent() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 font-light">
-              Non vediamo l'ora di vederti all'evento <span className="font-bold text-gray-900">Natale con i Cuccioli</span>
+              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">festa dei 5 anni di Zooplanet La Chiarella</span>!
             </p>
 
             <div className="p-6 bg-orange-50 rounded-2xl border-2 border-[#EE7623]">
