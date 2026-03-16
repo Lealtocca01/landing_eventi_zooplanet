@@ -9,13 +9,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'Zooplanet La Chiarella compie 5 anni! - Festa 28 Marzo',
+  title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
   description:
-    "Festeggia con noi i 5 anni di Zooplanet La Chiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. 28 Marzo, dalle 10 alle 18.",
+    "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. 28 Marzo, dalle 10 alle 18.",
   openGraph: {
-    title: 'Zooplanet La Chiarella compie 5 anni! - Festa 28 Marzo',
+    title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
     description:
-      "Festeggia con noi i 5 anni di Zooplanet La Chiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
+      "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
     type: 'website',
     url: 'https://landing-eventi-zooplanet.vercel.app/',
     images: [
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
         url: 'https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg',
         width: 1200,
         height: 630,
-        alt: 'Zooplanet La Chiarella - 5 anni di passione per gli animali',
+        alt: 'Zooplanet Lacchiarella - 5 anni di passione per gli animali',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zooplanet La Chiarella compie 5 anni! - Festa 28 Marzo',
+    title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
     description:
-      "Festeggia con noi i 5 anni di Zooplanet La Chiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
+      "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
     images: ['https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg'],
   },
 };
