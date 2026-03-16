@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { getSupabase } from '@/lib/supabase';
-import { Copy, Share2, CheckCircle2, Heart } from 'lucide-react';
+import { Copy, Share2, CheckCircle2, Gift } from 'lucide-react';
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
@@ -94,13 +94,13 @@ function ThankYouContent() {
 
           <div className="mt-12 space-y-6">
             <div className="text-center space-y-6">
-              <Heart className="w-16 h-16 text-[#EE7623] mx-auto animate-pulse" />
+              <Gift className="w-16 h-16 text-[#EE7623] mx-auto animate-pulse" />
               <div className="space-y-3">
                 <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
-                  Vuoi ottenere la tua
+                  Vuoi ricevere un
                 </h2>
                 <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#EE7623] leading-tight drop-shadow-[0_4px_12px_rgba(238,118,35,0.4)] [-webkit-text-stroke:1px_rgba(0,0,0,0.1)]">
-                  FOTO GRATIS
+                  GADGET A SORPRESA
                 </h2>
                 <p className="text-2xl md:text-3xl text-gray-900 font-light pt-2">
                   ?
@@ -109,7 +109,7 @@ function ThankYouContent() {
               <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed pt-4">
                 <span className="font-bold text-gray-900">Condividi</span> e fai <span className="font-bold text-gray-900">registrare</span> <span className="font-black text-[#EE7623] text-3xl">3 amici</span>.
                 <br />
-                <span className="text-lg md:text-xl italic text-gray-600">Quando si registrano, riceverai il tuo <span className="font-bold not-italic text-[#EE7623]">pass foto gratis</span>!</span>
+                <span className="text-lg md:text-xl italic text-gray-600">Quando si registrano, riceverai un <span className="font-bold not-italic text-[#EE7623]">gadget esclusivo in omaggio</span>!</span>
               </p>
             </div>
 
@@ -126,11 +126,11 @@ function ThankYouContent() {
               </div>
               {referralCount >= 3 ? (
                 <p className="text-center text-xl font-black">
-                  Complimenti! Hai sbloccato il <span className="text-2xl text-yellow-300">pass foto gratuito</span>!
+                  Complimenti! Hai sbloccato il tuo <span className="text-2xl text-yellow-300">gadget a sorpresa</span>!
                 </p>
               ) : (
                 <p className="text-center text-lg font-light">
-                  Ancora <span className="font-black text-2xl text-yellow-300">{3 - referralCount}</span> {3 - referralCount === 1 ? 'amico' : 'amici'} per sbloccare il <span className="font-bold">pass foto gratuito</span>
+                  Ancora <span className="font-black text-2xl text-yellow-300">{3 - referralCount}</span> {3 - referralCount === 1 ? 'amico' : 'amici'} per sbloccare il <span className="font-bold">gadget a sorpresa</span>
                 </p>
               )}
             </div>
@@ -183,7 +183,7 @@ function ThankYouContent() {
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold text-[#EE7623] mr-2">3.</span>
-                  Quando 3 amici si registrano usando il tuo link, ricevi il pass foto gratis
+                  Quando 3 amici si registrano con il tuo link, ricevi un gadget esclusivo in omaggio
                 </li>
               </ol>
             </div>
