@@ -167,6 +167,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-gray-600 font-medium text-left md:text-center -mt-1">
               Zooplanet Lacchiarella
             </p>
+            <p className="text-lg md:text-xl font-bold text-[#EE7623] text-left md:text-center mt-1">
+              📅 28 Marzo · dalle 10:00 alle 18:00
+            </p>
           </div>
 
           <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
