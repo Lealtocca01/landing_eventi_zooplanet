@@ -1,5 +1,11 @@
 'use client';
 
+declare global {
+  interface Window {
+    fbq: (...args: unknown[]) => void;
+  }
+}
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -139,6 +145,11 @@ export default function Home() {
         } catch (webhookError) {
           console.error('Webhook Error:', webhookError);
         }
+      }
+
+      // Meta Pixel: track Lead
+      if (data && typeof window !== 'undefined' && typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead');
       }
 
       // Redirect
