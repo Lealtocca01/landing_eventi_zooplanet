@@ -63,7 +63,7 @@ function ThankYouContent() {
 
   const shareOnWhatsApp = () => {
     const message = encodeURIComponent(
-      `Ciao! Ti invito alla festa per i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. Registrati qui: ${referralLink}`
+      `Ciao! Ti invito alla Sfilata dei cuccioli del 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella! Premi per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti. Registrati qui: ${referralLink}`
     );
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
@@ -82,7 +82,7 @@ function ThankYouContent() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 font-light">
-              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">festa dei 5 anni di Zooplanet Lacchiarella</span>!
+              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">Sfilata dei cuccioli del 17 ottobre da Zooplanet Lacchiarella</span>!
             </p>
 
             <div className="p-6 bg-orange-50 rounded-2xl border-2 border-[#EE7623]">
@@ -95,44 +95,12 @@ function ThankYouContent() {
           <div className="mt-12 space-y-6">
             <div className="text-center space-y-6">
               <Gift className="w-16 h-16 text-[#EE7623] mx-auto animate-pulse" />
-              <div className="space-y-3">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
-                  Vuoi ricevere un
-                </h2>
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#EE7623] leading-tight drop-shadow-[0_4px_12px_rgba(238,118,35,0.4)] [-webkit-text-stroke:1px_rgba(0,0,0,0.1)]">
-                  GADGET A SORPRESA
-                </h2>
-                <p className="text-2xl md:text-3xl text-gray-900 font-light pt-2">
-                  ?
-                </p>
-              </div>
-              <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed pt-4">
-                <span className="font-bold text-gray-900">Condividi</span> e fai <span className="font-bold text-gray-900">registrare</span> <span className="font-black text-[#EE7623] text-3xl">3 amici</span>.
-                <br />
-                <span className="text-lg md:text-xl italic text-gray-600">Quando si registrano, riceverai un <span className="font-bold not-italic text-[#EE7623]">gadget esclusivo in omaggio</span>!</span>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+                Invita i tuoi amici alla sfilata
+              </h2>
+              <p className="text-xl text-gray-700">
+                L’evento è aperto a tutti, con omaggi e gadget per tutti i partecipanti!
               </p>
-            </div>
-
-            <div className="p-6 bg-gradient-to-br from-[#EE7623] to-[#6ABF4B] rounded-2xl text-white space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-lg font-semibold">Progresso inviti</span>
-                <span className="text-2xl font-bold">{referralCount}/3</span>
-              </div>
-              <div className="w-full bg-white/30 rounded-full h-4">
-                <div
-                  className="bg-white h-4 rounded-full transition-all duration-500"
-                  style={{ width: `${(referralCount / 3) * 100}%` }}
-                ></div>
-              </div>
-              {referralCount >= 3 ? (
-                <p className="text-center text-xl font-black">
-                  Complimenti! Hai sbloccato il tuo <span className="text-2xl text-yellow-300">gadget a sorpresa</span>!
-                </p>
-              ) : (
-                <p className="text-center text-lg font-light">
-                  Ancora <span className="font-black text-2xl text-yellow-300">{3 - referralCount}</span> {3 - referralCount === 1 ? 'amico' : 'amici'} per sbloccare il <span className="font-bold">gadget a sorpresa</span>
-                </p>
-              )}
             </div>
 
             <div className="space-y-4">
@@ -183,7 +151,7 @@ function ThankYouContent() {
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold text-[#EE7623] mr-2">3.</span>
-                  Quando 3 amici si registrano con il tuo link, ricevi un gadget esclusivo in omaggio
+                  Vi aspettiamo il 17 ottobre da Zooplanet Lacchiarella
                 </li>
               </ol>
             </div>

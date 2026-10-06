@@ -10,31 +10,31 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
+  title: 'Sfilata dei cuccioli — 17 ottobre | Zooplanet Lacchiarella',
   description:
-    "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. 28 Marzo, dalle 10 alle 18.",
+    "Il 17 ottobre a Zooplanet Lacchiarella: sfilata con cappottini Ferribiella, premi per i primi 3 classificati, -20% su tutti i prodotti e omaggi per tutti.",
   openGraph: {
-    title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
+    title: 'Sfilata dei cuccioli — 17 ottobre | Zooplanet Lacchiarella',
     description:
-      "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
+      "Sfilata dei cuccioli il 17 ottobre, in collaborazione con Ferribiella. Premi per i primi 3 classificati, -20% su tutti i prodotti e omaggi per tutti.",
     type: 'website',
     url: 'https://landing-eventi-zooplanet.vercel.app/',
     images: [
       {
-        url: 'https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Zooplanet Lacchiarella - 5 anni di passione per gli animali',
+        url: 'https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.jpg',
+        width: 1254,
+        height: 1254,
+        alt: 'Sfilata dei cuccioli — 17 ottobre, Zooplanet Lacchiarella',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
+    title: 'Sfilata dei cuccioli — 17 ottobre | Zooplanet Lacchiarella',
     description:
-      "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
-    images: ['https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg'],
+      "Sfilata dei cuccioli il 17 ottobre, in collaborazione con Ferribiella. Premi per i primi 3 classificati, -20% su tutti i prodotti e omaggi per tutti.",
+    images: ['https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.jpg'],
   },
 };
 

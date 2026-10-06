@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { getSupabase } from '@/lib/supabase';
-import { Heart, Calendar, Camera, Gift, Users, Sparkles, PartyPopper, Percent, Tag } from 'lucide-react';
+import { Heart, Calendar, Trophy, Gift, Sparkles, Percent } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 
@@ -30,13 +30,14 @@ export default function Home() {
     searchParams.get('code') || searchParams.get('ref') || '';
 
   const [participants, setParticipants] = useState<number>(1);
-  const [timeSlot, setTimeSlot] = useState<string>("15:00 - 16:00");
+  const timeSlot = "Da confermare";
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     city: '',
     email: '',
     phone: '',
+    dogBreed: '',
     timeSlot: '',
     privacyAccepted: false,
     referredBy: referredByFromUrl,
@@ -62,6 +63,12 @@ export default function Home() {
       return;
     }
 
+    if (!formData.dogBreed.trim()) {
+      setError('Inserisci la razza del cane, oppure indica meticcio');
+      setLoading(false);
+      return;
+    }
+
     try {
       const supabase = getSupabase();
 
@@ -78,6 +85,7 @@ export default function Home() {
         city: formData.city?.trim() || null,
         email: formData.email?.trim() || null,
         phone: formData.phone?.trim() || null,
+        dog_breed: formData.dogBreed.trim(),
         participants: participants,
         time_slot: timeSlot,
         referred_by: formData.referredBy?.trim() || null,
@@ -137,6 +145,7 @@ export default function Home() {
                 first_name: formData.firstName,
                 last_name: formData.lastName,
                 phone: formData.phone,
+                dog_breed: formData.dogBreed.trim(),
                 participants,
                 time_slot: timeSlot,
               }),
@@ -170,33 +179,33 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center space-y-6 w-full px-3 sm:px-4 md:px-0">
           <div className="space-y-2">
             <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_3px_6px_rgba(0,0,0,0.2)] break-words [-webkit-text-stroke:1px_rgba(0,0,0,0.05)]">
-              Zooplanet compie
+              Sfilata dei
               <br />
-              <span className="text-[#EE7623] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">5 Anni!</span>
+              <span className="text-[#EE7623] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem]">cuccioli</span>
             </h1>
 
             <p className="text-sm md:text-base text-gray-600 font-medium text-left md:text-center -mt-1">
               Zooplanet Lacchiarella
             </p>
             <p className="text-lg md:text-xl font-bold text-[#EE7623] text-left md:text-center mt-1">
-              📅 28 Marzo · dalle 10:00 alle 18:00
+              📅 17 ottobre · In collaborazione con Ferribiella
             </p>
           </div>
 
           <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
             <p className="font-light">
-              Festeggia con noi: <span className="font-black text-gray-900">20% di sconto</span> su tutto, <span className="font-black text-gray-900">gadget in omaggio</span> e <span className="font-black text-gray-900">foto gratuita</span> con il tuo cucciolo.
+              Vieni alla sfilata: <span className="font-black text-gray-900">20% di sconto</span> su tutto, <span className="font-black text-gray-900">gadget in omaggio</span> e <span className="font-black text-gray-900">super premi per i primi 3 classificati</span>.
             </p>
             <p className="text-[#EE7623] font-bold text-2xl md:text-3xl lg:text-4xl">
-              Porta il tuo <span className="font-black italic">amico a 4 zampe</span> e vieni a <span className="font-black">festeggiare</span>!
+              Porta il tuo <span className="font-black italic">amico a 4 zampe</span> e partecipa alla <span className="font-black">sfilata</span>!
             </p>
           </div>
 
           <div className="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-2xl my-8 transition-transform hover:scale-105 duration-300">
-            <div className="aspect-[3/4] md:aspect-[2/3] lg:aspect-[3/4] relative">
+            <div className="aspect-square relative">
               <Image
-                src="/57431da6-bdd7-4d64-b31a-817e1d00b090.JPG"
-                alt="5 Anni di Zooplanet - Lacchiarella"
+                src="/sfilata-cuccioli-17-ottobre.jpg"
+                alt="Sfilata dei cuccioli — 17 ottobre, Zooplanet Lacchiarella"
                 fill
                 className="object-cover"
                 priority
@@ -209,7 +218,7 @@ export default function Home() {
             size="lg"
             className="w-full max-w-md mx-auto bg-[#EE7623] hover:bg-[#d66a1f] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
-            Partecipa alla festa
+            Iscriviti alla sfilata
           </Button>
         </div>
       </section>
@@ -218,7 +227,7 @@ export default function Home() {
         {/* Accenti festosi */}
         <div className="absolute top-10 left-10 text-[#EE7623] opacity-20 text-4xl animate-pulse">🎉</div>
         <div className="absolute top-20 right-20 text-[#6ABF4B] opacity-20 text-3xl animate-pulse delay-300">✨</div>
-        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🎂</div>
+        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🐾</div>
         
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
@@ -230,7 +239,7 @@ export default function Home() {
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
-                  src="/whatsapp-preview-final.jpg"
+                  src="/sfilata-cuccioli-17-ottobre.jpg"
                   alt="20% di sconto su tutto"
                   fill
                   className="object-cover"
@@ -244,7 +253,7 @@ export default function Home() {
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Anche sui prodotti <span className="font-bold">già scontati</span>. Un'<span className="italic">occasione unica</span>!
+                    Il <span className="font-bold">17 ottobre</span>, <span className="italic">-20% su tutti i prodotti</span>.
                   </p>
                 </div>
               </div>
@@ -264,35 +273,35 @@ export default function Home() {
                   <div className="flex items-center gap-2 mb-2">
                     <Gift className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      <span className="text-yellow-300">Gadget in omaggio</span> per te
+                      <span className="text-yellow-300">Omaggi e gadget</span> per tutti
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Per ogni <span className="font-bold">acquisto</span> riceverai un <span className="italic">gadget esclusivo</span> in regalo.
+                    Tanti <span className="font-bold">omaggi e gadget</span> per tutti i partecipanti all'evento.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 3: Foto gratuita con il tuo cucciolo */}
+            {/* Card 3: Premi per i primi 3 classificati */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/Festive Pups with Holiday Treats.png"
-                  alt="Foto gratuita con il tuo cucciolo"
+                  alt="Premi per i primi 3 classificati"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <Camera className="w-6 h-6 text-white" />
+                    <Trophy className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      <span className="text-yellow-300">Foto gratuita</span> con il tuo cucciolo
+                      <span className="text-yellow-300">Super premi</span> per i primi 3 classificati
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Un <span className="font-bold">ricordo speciale</span> con il tuo <span className="italic">amico a 4 zampe</span>.
+                    Il tuo cucciolo sfila: <span className="font-bold">super premi</span> per i <span className="italic">primi 3 classificati</span>.
                   </p>
                 </div>
               </div>
@@ -314,18 +323,18 @@ export default function Home() {
                     <h3 className="text-2xl font-black">Porta il tuo <span className="text-yellow-300">amico a 4 zampe</span></h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    I <span className="font-bold">cuccioli</span> sono i <span className="italic">protagonisti</span> della festa!
+                    I <span className="font-bold">cuccioli</span> sfileranno con i <span className="italic">cappottini Ferribiella</span>!
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 5: 5 anni di passione */}
+            {/* Card 5: Evento aperto a tutti */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group md:col-span-2">
               <div className="relative h-48 md:h-56">
                 <Image
                   src="/Gemini_Generated_Image_v4hhqzv4hhqzv4hh.png"
-                  alt="5 anni di Zooplanet"
+                  alt="Evento aperto a tutti a Zooplanet Lacchiarella"
                   fill
                   className="object-cover"
                 />
@@ -334,11 +343,11 @@ export default function Home() {
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-white" />
                     <h3 className="text-2xl font-black">
-                      <span className="text-yellow-300">5 anni</span> di passione per i tuoi animali
+                      <span className="text-yellow-300">Evento aperto a tutti</span>
                     </h3>
                   </div>
                   <p className="text-white/95 text-sm md:text-base font-light">
-                    Vieni a <span className="font-bold">festeggiare</span> questo <span className="italic">traguardo</span> insieme a noi!
+                    Ti aspettiamo da <span className="font-bold">Zooplanet Lacchiarella</span>, in collaborazione con <span className="italic">Ferribiella</span>!
                   </p>
                 </div>
               </div>
@@ -351,7 +360,7 @@ export default function Home() {
               size="lg"
               className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Registrati alla festa
+              Registrati alla sfilata
             </Button>
           </div>
         </div>
@@ -372,7 +381,7 @@ export default function Home() {
                 1. <span className="text-[#EE7623]">Registrati</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                Compila il modulo e <span className="font-semibold">scegli la fascia oraria</span> che preferisci.
+                Compila il modulo per <span className="font-semibold">iscriverti alla sfilata</span> del 17 ottobre.
               </p>
             </div>
 
@@ -390,13 +399,13 @@ export default function Home() {
 
             <div className="text-center space-y-4 p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-white hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="w-20 h-20 mx-auto bg-[#EE7623] rounded-full flex items-center justify-center">
-                <Camera className="w-10 h-10 text-white" />
+                <Trophy className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">
-                3. Scatta la <span className="text-[#EE7623]">foto ricordo</span>
+                3. Partecipa alla <span className="text-[#EE7623]">sfilata</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                <span className="font-bold">Gratis</span>, insieme al tuo <span className="italic font-semibold">amico a 4 zampe</span>.
+                Cappottini <span className="font-bold">Ferribiella</span> e super premi per i <span className="italic font-semibold">primi 3 classificati</span>.
               </p>
             </div>
           </div>
@@ -422,7 +431,7 @@ export default function Home() {
                 Registrati ora
               </h2>
               <p className="text-lg text-gray-600">
-                Compila il modulo per partecipare alla festa dei 5 anni
+                Compila il modulo per partecipare alla Sfilata dei cuccioli del 17 ottobre
               </p>
             </div>
 
@@ -512,6 +521,22 @@ export default function Home() {
               </div>
 
               <div className="space-y-2">
+                <Label htmlFor="dogBreed" className="text-lg">
+                  Razza del cane *
+                </Label>
+                <Input
+                  id="dogBreed"
+                  required
+                  value={formData.dogBreed}
+                  onChange={(e) =>
+                    setFormData({ ...formData, dogBreed: e.target.value })
+                  }
+                  className="text-lg py-6 rounded-xl"
+                  placeholder="Es. Labrador, Barboncino o meticcio"
+                />
+              </div>
+
+              <div className="space-y-2">
                 <Label htmlFor="participants" className="text-lg">
                   Numero partecipanti *
                 </Label>
@@ -530,30 +555,9 @@ export default function Home() {
                 </select>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="timeSlot" className="text-lg">
-                  Fascia oraria *
-                </Label>
-                <select
-                  id="timeSlot"
-                  value={timeSlot}
-                  onChange={(e) => setTimeSlot(e.target.value)}
-                  required
-                  className="w-full text-lg py-6 px-4 border-2 border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#EE7623] focus:border-transparent"
-                >
-                  {[
-                    "15:00 - 16:00",
-                    "16:00 - 17:00",
-                    "17:00 - 18:00",
-                    "18:00 - 19:00",
-                    "19:00 - 20:00",
-                  ].map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <p className="text-sm text-gray-600">
+                L’orario della sfilata sarà confermato prossimamente.
+              </p>
 
               <div className="flex items-start space-x-3 p-4 rounded-xl bg-gray-50">
                 <Checkbox
@@ -600,7 +604,7 @@ export default function Home() {
             Zooplanet Lacchiarella
           </p>
           <p className="text-gray-400">
-            5 Anni di Zooplanet - Festeggia con noi!
+            Sfilata dei cuccioli · 17 ottobre · In collaborazione con Ferribiella
           </p>
         </div>
       </footer>
