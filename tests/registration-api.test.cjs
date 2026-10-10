@@ -7,7 +7,7 @@ function loadRoute(file, db, fetch = async () => ({ ok: true }), env = { ZOOPLAN
   const module = { exports: {} };
   const code = ts.transpileModule(fs.readFileSync(file, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
   vm.runInNewContext(code, {
-    module, exports: module.exports, Request, URL, Date, AbortSignal, fetch, process: { env },
+    module, exports: module.exports, Request, URL, Date, Buffer, AbortSignal, fetch, process: { env },
     require(name) {
       if (name === 'next/server') return { NextResponse: { json: (data, init) => Response.json(data, init) } };
       if (name === '@/lib/server-supabase') return { EVENT_ID: 'sfilata-cuccioli-2026-10-17', getServerSupabase: () => db };
