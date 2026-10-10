@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { getSupabase } from '@/lib/supabase';
 import { Heart, Calendar, Trophy, Gift, Sparkles, Percent } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
@@ -23,7 +22,6 @@ export default function Home() {
     searchParams.get('code') || searchParams.get('ref') || '';
 
   const [participants, setParticipants] = useState<number>(1);
-  const timeSlot = '15:00 - 18:00';
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -62,87 +60,26 @@ export default function Home() {
     }
 
     try {
-      const supabase = getSupabase();
-
-      if (!supabase) {
-        setError('Errore di configurazione. Contatta il supporto.');
+      const response = await fetch('/api/registrations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+          city: formData.city.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          dog_breed: formData.dogBreed.trim(),
+          participants,
+          referred_by: formData.referredBy.trim() || null,
+          privacy_accepted: formData.privacyAccepted,
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.error || 'Errore durante la registrazione. Riprova.');
         setLoading(false);
         return;
-      }
-
-      // Cleaned payload
-      const clean = {
-        first_name: formData.firstName?.trim() || null,
-        last_name: formData.lastName?.trim() || null,
-        city: formData.city?.trim() || null,
-        email: formData.email?.trim() || null,
-        phone: formData.phone?.trim() || null,
-        dog_breed: formData.dogBreed.trim(),
-        participants: participants,
-        time_slot: timeSlot,
-        referred_by: formData.referredBy?.trim() || null,
-        privacy_accepted: !!formData.privacyAccepted,
-      };
-
-
-      // INSERT
-      const { data, error: insertError } = await supabase
-        .from('registrations')
-        .insert([clean])
-        .select()
-        .maybeSingle();
-
-
-      if (insertError) {
-        if (insertError.code === '23505') {
-          setError('Questa email è già registrata');
-        } else {
-          setError('Errore durante la registrazione. Riprova.');
-        }
-        setLoading(false);
-        return;
-      }
-
-      // Referral count update
-      const referredBy = formData.referredBy?.trim();
-      if (data && referredBy) {
-        const { error: rpcError } = await supabase.rpc(
-          'increment_referral_count',
-          {
-            ref_code: referredBy,
-          }
-        );
-        if (rpcError) {
-          console.error('RPC Error:', rpcError);
-        }
-      }
-
-      // Webhook notification
-      if (data) {
-        try {
-          await fetch(
-            '/api/registration-confirmation',
-            {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                registration_id: data.id,
-                email: data.email,
-                referral_code: data.referral_code,
-                first_name: formData.firstName,
-                last_name: formData.lastName,
-                phone: formData.phone,
-                dog_breed: formData.dogBreed.trim(),
-                participants,
-                time_slot: timeSlot,
-              }),
-            }
-          );
-        } catch (webhookError) {
-          console.error('Webhook Error:', webhookError);
-        }
       }
 
       // Meta Pixel: track Lead
@@ -152,7 +89,7 @@ export default function Home() {
 
       // Redirect
       if (data) {
-        router.push(`/thank-you?code=${data.referral_code}`);
+        router.push(`/thank-you?code=${data.referral_code}&mail=${data.email_accepted ? 'queued' : 'pending'}`);
       }
     } catch (err) {
       setError('Errore di connessione. Riprova.');
