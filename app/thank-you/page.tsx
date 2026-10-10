@@ -63,7 +63,7 @@ function ThankYouContent() {
 
   const shareOnWhatsApp = () => {
     const message = encodeURIComponent(
-      `Ciao! Ti invito alla festa per i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. Registrati qui: ${referralLink}`
+      `Ciao! Sabato 17 ottobre 2026 ti aspetto alla Sfilata dei Cuccioli da Zooplanet Lacchiarella, insieme a Ferribiella! Super premio ai primi 3 classificati, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti. Iscriviti qui: ${referralLink}`
     );
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
@@ -82,7 +82,7 @@ function ThankYouContent() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 font-light">
-              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">festa dei 5 anni di Zooplanet Lacchiarella</span>!
+              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">Sfilata dei Cuccioli da Zooplanet Lacchiarella, sabato 17 ottobre 2026</span>!
             </p>
 
             <div className="p-6 bg-orange-50 rounded-2xl border-2 border-[#EE7623]">
@@ -121,7 +121,7 @@ function ThankYouContent() {
               <div className="w-full bg-white/30 rounded-full h-4">
                 <div
                   className="bg-white h-4 rounded-full transition-all duration-500"
-                  style={{ width: `${(referralCount / 3) * 100}%` }}
+                  style={{ width: `${Math.min(referralCount / 3, 1) * 100}%` }}
                 ></div>
               </div>
               {referralCount >= 3 ? (
