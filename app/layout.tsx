@@ -10,31 +10,31 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
+  title: 'Sfilata dei Cuccioli - Sabato 17 Ottobre - Zooplanet Lacchiarella',
   description:
-    "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe. 28 Marzo, dalle 10 alle 18.",
+    "Sabato 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella: i cuccioli sfilano con i cappottini Ferribiella. Super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti.",
   openGraph: {
-    title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
+    title: 'Sfilata dei Cuccioli - Sabato 17 Ottobre - Zooplanet Lacchiarella',
     description:
-      "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
+      "Sabato 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella: i cuccioli sfilano con i cappottini Ferribiella. Super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti.",
     type: 'website',
     url: 'https://landing-eventi-zooplanet.vercel.app/',
     images: [
       {
-        url: 'https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Zooplanet Lacchiarella - 5 anni di passione per gli animali',
+        url: 'https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.jpg',
+        width: 1080,
+        height: 1082,
+        alt: 'Sfilata dei Cuccioli - 17 ottobre - Zooplanet Lacchiarella',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zooplanet Lacchiarella compie 5 anni! - Festa 28 Marzo',
+    title: 'Sfilata dei Cuccioli - Sabato 17 Ottobre - Zooplanet Lacchiarella',
     description:
-      "Festeggia con noi i 5 anni di Zooplanet Lacchiarella! 20% di sconto su tutto, gadget in regalo e foto gratis con il tuo amico a 4 zampe.",
-    images: ['https://landing-eventi-zooplanet.vercel.app/whatsapp-preview-final.jpg'],
+      "Sabato 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella: i cuccioli sfilano con i cappottini Ferribiella. Super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti.",
+    images: ['https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.jpg'],
   },
 };
 
