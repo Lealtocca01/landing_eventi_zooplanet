@@ -24,6 +24,7 @@ export async function POST(request: Request) {
           first_name: body.first_name,
           last_name: body.last_name,
           phone: body.phone,
+          dog_breed: body.dog_breed,
           participants: body.participants,
           time_slot: body.time_slot,
         }),

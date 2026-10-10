@@ -30,6 +30,7 @@ export default function Home() {
     city: '',
     email: '',
     phone: '',
+    dogBreed: '',
     privacyAccepted: false,
     referredBy: referredByFromUrl,
   });
@@ -47,6 +48,12 @@ export default function Home() {
     e.preventDefault();
     setError('');
     setLoading(true);
+
+    if (!formData.dogBreed.trim()) {
+      setError('Indica la razza del cane, oppure scrivi Meticcio');
+      setLoading(false);
+      return;
+    }
 
     if (!formData.privacyAccepted) {
       setError('Devi accettare la privacy policy per procedere');
@@ -70,6 +77,7 @@ export default function Home() {
         city: formData.city?.trim() || null,
         email: formData.email?.trim() || null,
         phone: formData.phone?.trim() || null,
+        dog_breed: formData.dogBreed.trim(),
         participants: participants,
         time_slot: timeSlot,
         referred_by: formData.referredBy?.trim() || null,
@@ -126,6 +134,7 @@ export default function Home() {
                 first_name: formData.firstName,
                 last_name: formData.lastName,
                 phone: formData.phone,
+                dog_breed: formData.dogBreed.trim(),
                 participants,
                 time_slot: timeSlot,
               }),
@@ -393,6 +402,21 @@ export default function Home() {
                   }
                   className="text-lg py-6 rounded-xl"
                   placeholder="+39 123 456 7890"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="dogBreed" className="text-lg">
+                  Razza del cane *
+                </Label>
+                <Input
+                  id="dogBreed"
+                  required
+                  maxLength={100}
+                  value={formData.dogBreed}
+                  onChange={(e) => setFormData({ ...formData, dogBreed: e.target.value })}
+                  className="text-lg py-6 rounded-xl"
+                  placeholder="Es. Labrador, Bassotto o Meticcio"
                 />
               </div>
 
