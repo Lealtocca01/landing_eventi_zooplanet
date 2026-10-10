@@ -53,7 +53,7 @@ function ThankYouContent() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-gray-900">
-              Sei <span className="text-[#6ABF4B]">registrato</span>!
+              Sei <span className="text-[#6ABF4B]">iscritto</span>!
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 font-light">
@@ -84,9 +84,9 @@ function ThankYouContent() {
                 </p>
               </div>
               <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed pt-4">
-                <span className="font-bold text-gray-900">Condividi</span> e fai <span className="font-bold text-gray-900">registrare</span> <span className="font-black text-[#EE7623] text-3xl">3 amici</span>.
+                <span className="font-bold text-gray-900">Condividi</span> e fai <span className="font-bold text-gray-900">iscrivere</span> <span className="font-black text-[#EE7623] text-3xl">3 amici</span>.
                 <br />
-                <span className="text-lg md:text-xl italic text-gray-600">Quando si registrano, riceverai un <span className="font-bold not-italic text-[#EE7623]">gadget esclusivo in omaggio</span>!</span>
+                <span className="text-lg md:text-xl italic text-gray-600">Quando si iscrivono, riceverai un <span className="font-bold not-italic text-[#EE7623]">gadget esclusivo in omaggio</span>!</span>
               </p>
             </div>
 
@@ -160,7 +160,7 @@ function ThankYouContent() {
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold text-[#EE7623] mr-2">3.</span>
-                  Quando 3 amici si registrano con il tuo link, ricevi un gadget esclusivo in omaggio
+                  Quando 3 amici si iscrivono con il tuo link, ricevi un gadget esclusivo in omaggio
                 </li>
               </ol>
             </div>

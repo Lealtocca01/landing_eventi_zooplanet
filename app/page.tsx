@@ -120,18 +120,18 @@ export default function Home() {
 
           <div className="space-y-3 text-2xl md:text-2xl lg:text-3xl text-gray-700 max-w-3xl mx-auto md:mx-auto">
             <p className="font-light">
-              Il tuo cucciolo sfila con i <span className="font-black text-gray-900">cappottini Ferribiella</span>. Un <span className="font-black text-gray-900">super premio</span> aspetta i primi 3 classificati!
+              I cuccioli sfileranno con i <span className="font-black text-gray-900">cappottini Ferribiella</span>: <span className="font-black text-gray-900">super premio</span> per i primi 3 classificati, <span className="font-black text-gray-900">-20%</span> su tutti i prodotti e <span className="font-black text-gray-900">omaggi e gadget</span> per tutti.
             </p>
             <p className="text-[#EE7623] font-bold text-2xl md:text-3xl lg:text-4xl">
-              <span className="font-black">-20% su tutti i prodotti</span>, omaggi e gadget per tutti. Evento aperto a tutti!
+              Evento <span className="font-black italic">aperto a tutti</span>: porta il tuo <span className="font-black">amico a 4 zampe</span>!
             </p>
           </div>
 
           <div className="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-2xl my-8 transition-transform hover:scale-105 duration-300">
-            <div className="aspect-[1200/630] relative">
+            <div className="aspect-square relative">
               <Image
-                src="/sfilata-cuccioli-hero.jpg"
-                alt="Illustrazione di cuccioli in passerella con cappottini"
+                src="/sfilata-cuccioli-17-ottobre.jpg"
+                alt="Sfilata dei Cuccioli - 17 ottobre - Zooplanet Lacchiarella con Ferribiella"
                 fill
                 className="object-cover"
                 priority
@@ -144,36 +144,115 @@ export default function Home() {
             size="lg"
             className="w-full max-w-md mx-auto bg-[#EE7623] hover:bg-[#d66a1f] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
-            Iscriviti alla sfilata
+            Iscriviti all'evento
           </Button>
         </div>
       </section>
 
       <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden">
         {/* Accenti festosi */}
-        <div className="absolute top-10 left-10 text-[#EE7623] opacity-20 text-4xl animate-pulse">🎉</div>
+        <div className="absolute top-10 left-10 text-[#EE7623] opacity-20 text-4xl animate-pulse">🐾</div>
         <div className="absolute top-20 right-20 text-[#6ABF4B] opacity-20 text-3xl animate-pulse delay-300">✨</div>
-        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🐾</div>
-        
+        <div className="absolute bottom-20 left-20 text-[#EE7623] opacity-20 text-3xl animate-pulse delay-700">🏆</div>
+
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900 mb-16 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-            <span className="text-[#EE7623]">5 motivi</span> per cui <span className="italic">non puoi mancare</span>
+            <span className="text-[#EE7623]">4 motivi</span> per cui <span className="italic">non puoi mancare</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { icon: Percent, title: '-20% su tutti i prodotti', text: 'Approfitta dello sconto durante l’evento.' },
-              { icon: Gift, title: 'Omaggi e gadget per tutti', text: 'Ti aspettiamo con tanti omaggi per te e il tuo cucciolo.' },
-              { icon: Trophy, title: 'Super premio ai primi 3', text: 'I primi 3 classificati della sfilata vincono un super premio.' },
-              { icon: Heart, title: 'In passerella con Ferribiella', text: 'I cuccioli sfilano con i cappottini Ferribiella.' },
-              { icon: Sparkles, title: 'Evento aperto a tutti', text: 'Porta il tuo amico a 4 zampe e partecipa con noi!' },
-            ].map(({ icon: Icon, title, text }, index) => (
-              <div key={title} className={`rounded-3xl p-8 shadow-xl bg-white ${index === 4 ? 'md:col-span-2' : ''}`}>
-                <Icon className="w-10 h-10 text-[#EE7623] mb-4" />
-                <h3 className="text-2xl font-black text-gray-900 mb-3">{title}</h3>
-                <p className="text-lg text-gray-600">{text}</p>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/card-sfilata.jpg"
+                  alt="La sfilata con i cappottini Ferribiella"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sparkles className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">
+                      <span className="text-yellow-300">La sfilata</span> con i cappottini
+                    </h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    I cuccioli sfileranno indossando i <span className="font-bold">cappottini Ferribiella</span>.
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/card-premio.jpg"
+                  alt="Super premio per i primi 3 classificati"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Trophy className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">
+                      <span className="text-yellow-300">Super premio</span> per i primi 3
+                    </h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    I <span className="font-bold">primi 3 classificati</span> della sfilata vincono un <span className="italic">super premio</span>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/whatsapp-preview-final.jpg"
+                  alt="-20% su tutti i prodotti"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#EE7623]/90 via-[#EE7623]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Percent className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">
+                      <span className="text-yellow-300">-20%</span> su tutti i prodotti
+                    </h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    Durante l'evento lo sconto vale su <span className="font-bold">tutti i prodotti</span> del negozio.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+              <div className="relative h-48 md:h-56">
+                <Image
+                  src="/card-omaggi.jpg"
+                  alt="Omaggi e gadget per tutti"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6ABF4B]/90 via-[#6ABF4B]/70 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Gift className="w-6 h-6 text-white" />
+                    <h3 className="text-2xl font-black">
+                      <span className="text-yellow-300">Omaggi e gadget</span> per tutti
+                    </h3>
+                  </div>
+                  <p className="text-white/95 text-sm md:text-base font-light">
+                    L'evento è <span className="font-bold">aperto a tutti</span> e nessuno torna a casa a mani vuote.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div className="text-center mt-12">
@@ -182,7 +261,7 @@ export default function Home() {
               size="lg"
               className="w-full max-w-md mx-auto bg-[#6ABF4B] hover:bg-[#5ba942] text-white text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Iscriviti alla sfilata
+              Iscriviti all'evento
             </Button>
           </div>
         </div>
@@ -209,13 +288,13 @@ export default function Home() {
 
             <div className="text-center space-y-4 p-8 rounded-3xl bg-gradient-to-br from-green-50 to-white hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="w-20 h-20 mx-auto bg-[#6ABF4B] rounded-full flex items-center justify-center">
-                <Gift className="w-10 h-10 text-white" />
+                <Sparkles className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">
                 2. Vieni con il tuo <span className="text-[#EE7623] italic">cucciolo</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                <span className="font-bold">Sconti</span>, <span className="font-semibold">gadget</span> e tante <span className="italic">sorprese</span> ti aspettano.
+                Sabato <span className="font-bold">17 ottobre</span> da Zooplanet Lacchiarella: si sfila con i <span className="font-semibold">cappottini Ferribiella</span>.
               </p>
             </div>
 
@@ -224,10 +303,10 @@ export default function Home() {
                 <Trophy className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">
-                3. Sfila in <span className="text-[#EE7623]">passerella</span>
+                3. Punta al <span className="text-[#EE7623]">podio</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                Con i <span className="font-bold">cappottini Ferribiella</span>: super premio per i primi 3 classificati.
+                <span className="font-bold">Super premio</span> per i primi 3 classificati, <span className="italic font-semibold">-20%</span> e gadget per tutti.
               </p>
             </div>
           </div>
@@ -239,7 +318,7 @@ export default function Home() {
               variant="outline"
               className="w-full max-w-md mx-auto border-2 border-[#6ABF4B] text-[#6ABF4B] hover:bg-[#6ABF4B] hover:text-white text-lg py-6 rounded-full transition-all duration-300 hover:scale-105"
             >
-              Prenota ora
+              Iscriviti ora
             </Button>
           </div>
         </div>
@@ -250,10 +329,10 @@ export default function Home() {
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
             <div className="text-left md:text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
-                Registrati ora
+                Iscriviti ora
               </h2>
               <p className="text-lg text-gray-600">
-                Compila il modulo per partecipare alla Sfilata dei Cuccioli
+                Compila il modulo per partecipare alla Sfilata dei Cuccioli di sabato 17 ottobre
               </p>
             </div>
 
@@ -412,7 +491,7 @@ export default function Home() {
                 size="lg"
                 className="w-full bg-[#EE7623] hover:bg-[#d66a1f] text-white text-xl py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
               >
-                {loading ? 'Registrazione in corso...' : 'Conferma la registrazione'}
+                {loading ? 'Iscrizione in corso...' : "Conferma l'iscrizione"}
               </Button>
             </form>
           </div>
