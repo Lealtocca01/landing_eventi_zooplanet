@@ -63,7 +63,7 @@ function ThankYouContent() {
 
   const shareOnWhatsApp = () => {
     const message = encodeURIComponent(
-      `Ciao! Sabato 17 ottobre 2026 ti aspetto alla Sfilata dei Cuccioli da Zooplanet Lacchiarella, insieme a Ferribiella! Super premio ai primi 3 classificati, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti. Iscriviti qui: ${referralLink}`
+      `Ciao! Sabato 17 ottobre 2026, dalle 15:00 alle 18:00, ti aspetto alla Sfilata dei Cuccioli da Zooplanet Lacchiarella, insieme a Ferribiella! Super premio ai primi 3 classificati, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti. Iscriviti qui: ${referralLink}`
     );
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
@@ -82,7 +82,7 @@ function ThankYouContent() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 font-light">
-              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">Sfilata dei Cuccioli da Zooplanet Lacchiarella, sabato 17 ottobre 2026</span>!
+              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">Sfilata dei Cuccioli da Zooplanet Lacchiarella, sabato 17 ottobre 2026, dalle 15:00 alle 18:00</span>!
             </p>
 
             <div className="p-6 bg-orange-50 rounded-2xl border-2 border-[#EE7623]">

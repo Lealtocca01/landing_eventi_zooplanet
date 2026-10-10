@@ -23,7 +23,7 @@ export default function Home() {
     searchParams.get('code') || searchParams.get('ref') || '';
 
   const [participants, setParticipants] = useState<number>(1);
-  const timeSlot = 'Orario in via di conferma';
+  const timeSlot = '15:00 - 18:00';
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -168,7 +168,7 @@ export default function Home() {
               Zooplanet Lacchiarella · in collaborazione con Ferribiella
             </p>
             <p className="text-lg md:text-xl font-bold text-[#EE7623] text-left md:text-center mt-1">
-              📅 Sabato 17 ottobre 2026 · Orario in via di conferma
+              📅 Sabato 17 ottobre 2026 · dalle 15:00 alle 18:00
             </p>
           </div>
 
@@ -416,7 +416,7 @@ export default function Home() {
               </div>
 
               <p className="text-gray-600 rounded-xl bg-orange-50 p-4">
-                Sabato 17 ottobre 2026 · Orario in via di conferma
+                Sabato 17 ottobre 2026 · dalle 15:00 alle 18:00
               </p>
 
               <div className="flex items-start space-x-3 p-4 rounded-xl bg-gray-50">
@@ -464,7 +464,7 @@ export default function Home() {
             Zooplanet Lacchiarella
           </p>
           <p className="text-gray-400">
-            Sfilata dei Cuccioli · Sabato 17 ottobre 2026 · Ferribiella
+            Sfilata dei Cuccioli · Sabato 17 ottobre 2026 · 15:00–18:00 · Ferribiella
           </p>
         </div>
       </footer>

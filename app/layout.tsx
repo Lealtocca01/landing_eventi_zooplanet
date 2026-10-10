@@ -12,11 +12,11 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: 'Sfilata dei Cuccioli – 17 ottobre 2026 | Zooplanet Lacchiarella',
   description:
-    "Sabato 17 ottobre: Sfilata dei Cuccioli con Ferribiella. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti.",
+    "Sabato 17 ottobre, dalle 15:00 alle 18:00: Sfilata dei Cuccioli con Ferribiella. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti.",
   openGraph: {
     title: 'Sfilata dei Cuccioli – 17 ottobre 2026 | Zooplanet Lacchiarella',
     description:
-      "Sfilata dei Cuccioli con Ferribiella: sabato 17 ottobre 2026. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti.",
+      "Sfilata dei Cuccioli con Ferribiella: sabato 17 ottobre 2026, dalle 15:00 alle 18:00. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti.",
     type: 'website',
     url: 'https://landing-eventi-zooplanet.vercel.app/',
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sfilata dei Cuccioli – 17 ottobre 2026 | Zooplanet Lacchiarella',
     description:
-      "Sfilata dei Cuccioli con Ferribiella: sabato 17 ottobre 2026. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti.",
+      "Sfilata dei Cuccioli con Ferribiella: sabato 17 ottobre 2026, dalle 15:00 alle 18:00. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti.",
     images: ['https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.png'],
   },
 };
