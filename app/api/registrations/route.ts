@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     if (!token) return NextResponse.json({ error: 'Il servizio non è disponibile. Riprova tra poco.' }, { status: 503 });
     const db = getServerSupabase();
     const { data, error } = await db.from('registrations')
-      .insert({ ...parsed.data, event_id: EVENT_ID, time_slot: '15:00 - 18:00' })
+      .insert({ ...parsed.data, event_id: EVENT_ID, time_slot: '15:00 - 18:00', confirmation_queued_at: new Date().toISOString() })
       .select().single();
     if (error) return NextResponse.json({ error: error.code === '23505' ? 'Questa email è già iscritta alla sfilata. Controlla la mail di conferma.' : 'Errore durante la registrazione. Riprova.' }, { status: error.code === '23505' ? 409 : 503 });
     // The database keeps unsent confirmations so the automation can retry them.

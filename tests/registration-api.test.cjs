@@ -64,3 +64,27 @@ test('referral endpoint returns only count and scopes to current event', async (
   assert.equal(filters[0][1], 'sfilata-cuccioli-2026-10-17');
   assert.equal((await route.GET(new Request('https://example.com/api/referrals?code=bad'))).status, 400);
 });
+test('retry endpoint rejects missing or wrong token before accessing contacts', async () => {
+  const route = loadRoute('app/api/confirmations/retry/route.ts', { from() { throw Error('must not read'); } });
+  for (const token of ['', 'wrong']) {
+    const request = new Request('https://example.com/api/confirmations/retry', { method: 'POST', headers: { 'x-webhook-token': token } });
+    assert.equal((await route.POST(request)).status, 401);
+  }
+});
+test('retry leases pending confirmations and skips already claimed messages', async () => {
+  let phase = 'read'; let leased = 0; let sent = 0; const filters = [];
+  const rows = [{ id: 'first', email: 'first@example.com' }, { id: 'already-claimed', email: 'second@example.com' }];
+  const query = {
+    eq(k,v) { filters.push([k,v]); return this; }, is() { return this; }, lt() { return this; }, or() { return this; }, order() { return this; },
+    limit: async () => ({ data: rows }), select() { return this; },
+    maybeSingle: async () => ({ data: leased++ === 0 ? { id: 'first' } : null }),
+  };
+  const db = { from: () => ({ select() { phase = 'read'; return query; }, update() { phase = 'lease'; return query; } }) };
+  const route = loadRoute('app/api/confirmations/retry/route.ts', db, async (url, init) => {
+    assert.equal(phase, 'lease'); assert.equal(JSON.parse(init.body).registration_id, 'first'); sent++; return { ok: true };
+  });
+  const response = await route.POST(new Request('https://example.com/api/confirmations/retry', { method: 'POST', headers: { 'x-webhook-token': 'test-only' } }));
+  assert.equal(response.status, 200); assert.equal(sent, 1);
+  assert.deepEqual(await response.json(), { pending: 2, accepted: 1 });
+  assert.equal(filters[0][1], 'sfilata-cuccioli-2026-10-17');
+});
