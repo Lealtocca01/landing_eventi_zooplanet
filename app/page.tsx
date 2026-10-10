@@ -184,8 +184,8 @@ export default function Home() {
           <div className="relative w-full max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-2xl my-8 transition-transform hover:scale-105 duration-300">
             <div className="aspect-[1200/630] relative">
               <Image
-                src="/sfilata-cuccioli-17-ottobre.png"
-                alt="Sfilata dei Cuccioli · 17 ottobre · Zooplanet Lacchiarella"
+                src="/sfilata-cuccioli-hero.jpg"
+                alt="Illustrazione di cuccioli in passerella con cappottini"
                 fill
                 className="object-cover"
                 priority
