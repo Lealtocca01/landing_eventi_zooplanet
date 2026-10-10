@@ -10,16 +10,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { getSupabase } from '@/lib/supabase';
-import { Calendar, Gift, Sparkles, Percent, Trophy } from 'lucide-react';
+import { Heart, Calendar, Trophy, Gift, Sparkles, Percent } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 
@@ -30,14 +22,13 @@ export default function Home() {
     searchParams.get('code') || searchParams.get('ref') || '';
 
   const [participants, setParticipants] = useState<number>(1);
-  const [timeSlot, setTimeSlot] = useState<string>("15:00 - 16:00");
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     city: '',
     email: '',
     phone: '',
-    timeSlot: '',
+    dogBreed: '',
     privacyAccepted: false,
     referredBy: referredByFromUrl,
   });
@@ -56,6 +47,12 @@ export default function Home() {
     setError('');
     setLoading(true);
 
+    if (!formData.dogBreed.trim()) {
+      setError('Indica la razza del cane, oppure scrivi Meticcio');
+      setLoading(false);
+      return;
+    }
+
     if (!formData.privacyAccepted) {
       setError('Devi accettare la privacy policy per procedere');
       setLoading(false);
@@ -63,88 +60,26 @@ export default function Home() {
     }
 
     try {
-      const supabase = getSupabase();
-
-      if (!supabase) {
-        setError('Errore di configurazione. Contatta il supporto.');
+      const response = await fetch('/api/registrations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+          city: formData.city.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          dog_breed: formData.dogBreed.trim(),
+          participants,
+          referred_by: formData.referredBy.trim() || null,
+          privacy_accepted: formData.privacyAccepted,
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.error || 'Errore durante la registrazione. Riprova.');
         setLoading(false);
         return;
-      }
-
-      // Cleaned payload
-      const clean = {
-        first_name: formData.firstName?.trim() || null,
-        last_name: formData.lastName?.trim() || null,
-        city: formData.city?.trim() || null,
-        email: formData.email?.trim() || null,
-        phone: formData.phone?.trim() || null,
-        participants: participants,
-        time_slot: timeSlot,
-        referred_by: formData.referredBy?.trim() || null,
-        privacy_accepted: !!formData.privacyAccepted,
-      };
-
-      console.log("Payload to Supabase:", clean);
-
-      // INSERT
-      const { data, error: insertError } = await supabase
-        .from('registrations')
-        .insert([clean])
-        .select()
-        .maybeSingle();
-
-      console.log("Insert result:", { data, insertError });
-
-      if (insertError) {
-        if (insertError.code === '23505') {
-          setError('Questa email è già registrata');
-        } else {
-          setError('Errore durante la registrazione. Riprova.');
-        }
-        setLoading(false);
-        return;
-      }
-
-      // Referral count update
-      const referredBy = formData.referredBy?.trim();
-      if (data && referredBy) {
-        const { error: rpcError } = await supabase.rpc(
-          'increment_referral_count',
-          {
-            ref_code: referredBy,
-          }
-        );
-        if (rpcError) {
-          console.error('RPC Error:', rpcError);
-        }
-      }
-
-      // Webhook notification
-      if (data) {
-        try {
-          await fetch(
-            'https://twipagency.app.n8n.cloud/webhook/zooplanet/registration-confirmation',
-            {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-Webhook-Token': 'zooplanet_2025_secret_abc123',
-              },
-              body: JSON.stringify({
-                registration_id: data.id,
-                email: data.email,
-                referral_code: data.referral_code,
-                first_name: formData.firstName,
-                last_name: formData.lastName,
-                phone: formData.phone,
-                participants,
-                time_slot: timeSlot,
-              }),
-            }
-          );
-        } catch (webhookError) {
-          console.error('Webhook Error:', webhookError);
-        }
       }
 
       // Meta Pixel: track Lead
@@ -154,7 +89,7 @@ export default function Home() {
 
       // Redirect
       if (data) {
-        router.push(`/thank-you?code=${data.referral_code}`);
+        router.push(`/thank-you?code=${data.referral_code}&mail=${data.email_accepted ? 'queued' : 'pending'}`);
       }
     } catch (err) {
       setError('Errore di connessione. Riprova.');
@@ -176,10 +111,10 @@ export default function Home() {
             </h1>
 
             <p className="text-sm md:text-base text-gray-600 font-medium text-left md:text-center -mt-1">
-              Evento speciale da Zooplanet Lacchiarella · in collaborazione con Ferribiella
+              Zooplanet Lacchiarella · in collaborazione con Ferribiella
             </p>
             <p className="text-lg md:text-xl font-bold text-[#EE7623] text-left md:text-center mt-1">
-              📅 Sabato 17 Ottobre
+              📅 Sabato 17 ottobre 2026 · dalle 15:00 alle 18:00
             </p>
           </div>
 
@@ -347,7 +282,7 @@ export default function Home() {
                 1. <span className="text-[#EE7623]">Registrati</span>
               </h3>
               <p className="text-lg text-gray-600 font-light">
-                Compila il modulo e <span className="font-semibold">scegli la fascia oraria</span> che preferisci.
+                Compila il modulo per <span className="font-semibold">iscriverti alla sfilata</span>.
               </p>
             </div>
 
@@ -487,6 +422,21 @@ export default function Home() {
               </div>
 
               <div className="space-y-2">
+                <Label htmlFor="dogBreed" className="text-lg">
+                  Razza del cane *
+                </Label>
+                <Input
+                  id="dogBreed"
+                  required
+                  maxLength={100}
+                  value={formData.dogBreed}
+                  onChange={(e) => setFormData({ ...formData, dogBreed: e.target.value })}
+                  className="text-lg py-6 rounded-xl"
+                  placeholder="Es. Labrador, Bassotto o Meticcio"
+                />
+              </div>
+
+              <div className="space-y-2">
                 <Label htmlFor="participants" className="text-lg">
                   Numero partecipanti *
                 </Label>
@@ -505,30 +455,9 @@ export default function Home() {
                 </select>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="timeSlot" className="text-lg">
-                  Fascia oraria *
-                </Label>
-                <select
-                  id="timeSlot"
-                  value={timeSlot}
-                  onChange={(e) => setTimeSlot(e.target.value)}
-                  required
-                  className="w-full text-lg py-6 px-4 border-2 border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#EE7623] focus:border-transparent"
-                >
-                  {[
-                    "15:00 - 16:00",
-                    "16:00 - 17:00",
-                    "17:00 - 18:00",
-                    "18:00 - 19:00",
-                    "19:00 - 20:00",
-                  ].map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <p className="text-gray-600 rounded-xl bg-orange-50 p-4">
+                Sabato 17 ottobre 2026 · dalle 15:00 alle 18:00
+              </p>
 
               <div className="flex items-start space-x-3 p-4 rounded-xl bg-gray-50">
                 <Checkbox
@@ -575,7 +504,7 @@ export default function Home() {
             Zooplanet Lacchiarella
           </p>
           <p className="text-gray-400">
-            Sfilata dei Cuccioli · Sabato 17 Ottobre · in collaborazione con Ferribiella
+            Sfilata dei Cuccioli · Sabato 17 ottobre 2026 · 15:00–18:00 · Ferribiella
           </p>
         </div>
       </footer>

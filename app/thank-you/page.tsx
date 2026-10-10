@@ -3,7 +3,6 @@
 import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { getSupabase } from '@/lib/supabase';
 import { Copy, Share2, CheckCircle2, Gift } from 'lucide-react';
 
 function ThankYouContent() {
@@ -17,42 +16,18 @@ function ThankYouContent() {
   useEffect(() => {
     if (!code) return;
 
-    const supabase = getSupabase();
-    if (!supabase) return;
-
+    let cancelled = false;
     const fetchReferralCount = async () => {
-      const { data } = await supabase
-        .from('registrations')
-        .select('referral_count')
-        .eq('referral_code', code)
-        .maybeSingle();
-
-      if (data) {
-        setReferralCount(data.referral_count);
-      }
+      try {
+        const response = await fetch(`/api/referrals?code=${encodeURIComponent(code)}`);
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!cancelled) setReferralCount(data.referral_count);
+      } catch { /* Keep the last verified count while offline. */ }
     };
-
     fetchReferralCount();
-
-    const channel = supabase
-      .channel('referral-updates')
-      .on(
-        'postgres_changes',
-        {
-          event: 'UPDATE',
-          schema: 'public',
-          table: 'registrations',
-          filter: `referral_code=eq.${code}`,
-        },
-        (payload: any) => {
-          setReferralCount(payload.new.referral_count);
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
+    const interval = setInterval(fetchReferralCount, 15000);
+    return () => { cancelled = true; clearInterval(interval); };
   }, [code]);
 
   const copyToClipboard = () => {
@@ -63,7 +38,7 @@ function ThankYouContent() {
 
   const shareOnWhatsApp = () => {
     const message = encodeURIComponent(
-      `Ciao! Sabato 17 ottobre da Zooplanet Lacchiarella c'è la Sfilata dei Cuccioli con i cappottini Ferribiella: super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti. Iscriviti qui: ${referralLink}`
+      `Ciao! Sabato 17 ottobre 2026, dalle 15:00 alle 18:00, ti aspetto alla Sfilata dei Cuccioli da Zooplanet Lacchiarella, insieme a Ferribiella! Super premio ai primi 3 classificati, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti. Iscriviti qui: ${referralLink}`
     );
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
@@ -82,12 +57,14 @@ function ThankYouContent() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 font-light">
-              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">Sfilata dei Cuccioli di sabato 17 ottobre da Zooplanet Lacchiarella</span>!
+              Non vediamo l'ora di vederti alla <span className="font-bold text-gray-900">Sfilata dei Cuccioli da Zooplanet Lacchiarella, sabato 17 ottobre 2026, dalle 15:00 alle 18:00</span>!
             </p>
 
             <div className="p-6 bg-orange-50 rounded-2xl border-2 border-[#EE7623]">
               <p className="text-lg text-gray-700">
-                Riceverai una email di conferma con tutti i dettagli dell'evento
+                {searchParams.get('mail') === 'pending'
+                  ? "La tua iscrizione è salvata. L'email di conferma è in attesa di invio: conserva questa pagina con i dettagli e il tuo link."
+                  : "Riceverai una email di conferma con tutti i dettagli dell'evento. Controlla anche la cartella spam."}
               </p>
             </div>
           </div>
@@ -121,7 +98,7 @@ function ThankYouContent() {
               <div className="w-full bg-white/30 rounded-full h-4">
                 <div
                   className="bg-white h-4 rounded-full transition-all duration-500"
-                  style={{ width: `${(referralCount / 3) * 100}%` }}
+                  style={{ width: `${Math.min(referralCount / 3, 1) * 100}%` }}
                 ></div>
               </div>
               {referralCount >= 3 ? (

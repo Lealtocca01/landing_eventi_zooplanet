@@ -10,31 +10,31 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'Sfilata dei Cuccioli - Sabato 17 Ottobre - Zooplanet Lacchiarella',
+  title: 'Sfilata dei Cuccioli – 17 ottobre 2026 | Zooplanet Lacchiarella',
   description:
-    "Sabato 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella: i cuccioli sfilano con i cappottini Ferribiella. Super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti.",
+    "Sabato 17 ottobre, dalle 15:00 alle 18:00: Sfilata dei Cuccioli con Ferribiella. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti. Evento aperto a tutti.",
   openGraph: {
-    title: 'Sfilata dei Cuccioli - Sabato 17 Ottobre - Zooplanet Lacchiarella',
+    title: 'Sfilata dei Cuccioli – 17 ottobre 2026 | Zooplanet Lacchiarella',
     description:
-      "Sabato 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella: i cuccioli sfilano con i cappottini Ferribiella. Super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti.",
+      "Sfilata dei Cuccioli con Ferribiella: sabato 17 ottobre 2026, dalle 15:00 alle 18:00. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti.",
     type: 'website',
     url: 'https://landing-eventi-zooplanet.vercel.app/',
     images: [
       {
-        url: 'https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.jpg',
-        width: 1080,
-        height: 1082,
-        alt: 'Sfilata dei Cuccioli - 17 ottobre - Zooplanet Lacchiarella',
-        type: 'image/jpeg',
+        url: 'https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sfilata dei Cuccioli – 17 ottobre – Zooplanet Lacchiarella',
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sfilata dei Cuccioli - Sabato 17 Ottobre - Zooplanet Lacchiarella',
+    title: 'Sfilata dei Cuccioli – 17 ottobre 2026 | Zooplanet Lacchiarella',
     description:
-      "Sabato 17 ottobre da Zooplanet Lacchiarella, in collaborazione con Ferribiella: i cuccioli sfilano con i cappottini Ferribiella. Super premio per i primi 3 classificati, -20% su tutti i prodotti e omaggi e gadget per tutti.",
-    images: ['https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.jpg'],
+      "Sfilata dei Cuccioli con Ferribiella: sabato 17 ottobre 2026, dalle 15:00 alle 18:00. Super premio ai primi 3, -20% su tutti i prodotti, omaggi e gadget per tutti.",
+    images: ['https://landing-eventi-zooplanet.vercel.app/sfilata-cuccioli-17-ottobre.png'],
   },
 };
 
